@@ -107,7 +107,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
                         .addComponent(nombresjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                         .addComponent(jtarjetaTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -168,7 +168,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addComponent(consultarBtn)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
             .addComponent(clientesjScrollPane2)
         );
         jPanel2Layout.setVerticalGroup(
@@ -198,6 +198,11 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
         jLabel6.setText("APELLIDOS:");
 
         actualizarBtn.setText("ACTUALIZAR");
+        actualizarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -284,7 +289,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ccEliminarjTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(eliminarBtn))))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -337,6 +342,15 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
     private void consultarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarBtnActionPerformed
         clientesjTextArea1.setText(gestionCliente.listar());
     }//GEN-LAST:event_consultarBtnActionPerformed
+
+    private void actualizarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarBtnActionPerformed
+        Integer cedula = Integer.valueOf(ccUpdateTextField5.getText());
+        String apellidos = apellidosUpdatejTextField6.getText();
+        String nombres = nombresUpdatejTextField7.getText();
+        Integer tarjeta = Integer.valueOf(jtarjetaUpdateTextField8.getText());
+        
+        gestionCliente.actualizar(cedula, nombres, apellidos, tarjeta);
+    }//GEN-LAST:event_actualizarBtnActionPerformed
 
     /**
      * @param args the command line arguments
