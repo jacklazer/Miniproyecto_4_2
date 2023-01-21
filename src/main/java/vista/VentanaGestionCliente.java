@@ -377,12 +377,41 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_consultarBtnActionPerformed
 
     private void actualizarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarBtnActionPerformed
-        Integer cedula = Integer.valueOf(ccUpdateTextField5.getText());
-        String apellidos = apellidosUpdatejTextField6.getText();
-        String nombres = nombresUpdatejTextField7.getText();
-        Integer tarjeta = Integer.valueOf(jtarjetaUpdateTextField8.getText());
         
-        gestionCliente.actualizar(cedula, nombres, apellidos, tarjeta);
+        
+                String cedulaIngresada = ccUpdateTextField5.getText();
+
+
+                if (isNotNumeric(cedulaIngresada)){
+                
+                JOptionPane.showMessageDialog(null, "Por favor ingrese una cedula válida");
+                
+                }else{
+                
+                Integer intCedulaIngresada =Integer.parseInt(cedulaIngresada);
+                
+                    if(GestionCliente.getListaClientes().containsKey(intCedulaIngresada)){
+                        //actualizar(Integer cedula, String nombres, String apellidos, Integer tarjetaDeCredito)
+                        JOptionPane.showMessageDialog(null, "La cedula "+ cedulaIngresada + " ya existe");
+                        
+                    }else{
+
+                        gestionCliente.agregar(intCedulaIngresada, nombresNuevos, apellidosNuevos, intTarjetaNueva);
+                        JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
+                    }
+                }
+        
+        
+//        String nombresNuevos = apellidosUpdatejTextField6.getText();
+//        String apellidosNuevos = nombresUpdatejTextField7.getText();
+//        String tarjetaNueva = jtarjetaUpdateTextField8.getText();
+//                
+//        Integer cedula = Integer.valueOf(ccUpdateTextField5.getText());
+//        String apellidos = apellidosUpdatejTextField6.getText();
+//        String nombres = nombresUpdatejTextField7.getText();
+//        Integer tarjeta = Integer.valueOf(jtarjetaUpdateTextField8.getText());
+//        
+//        gestionCliente.actualizar(cedula, nombres, apellidos, tarjeta);
     }//GEN-LAST:event_actualizarBtnActionPerformed
 
     /**
