@@ -58,6 +58,7 @@ public class GestionCliente{
         for(int cedula : listaClientes.keySet()){
 ////            Cliente cliente = listaClientes.get(cedula);
             cadena += listaClientes.get(cedula) + "\n";
+            //g
         }
         return cadena;
     }
