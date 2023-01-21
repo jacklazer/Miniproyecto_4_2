@@ -56,8 +56,8 @@ public class GestionCliente{
     public String listar() {
         String cadena = "---------- Afiliados ----------\n";
         for(int cedula : listaClientes.keySet()){
-            Cliente cliente = listaClientes.get(cedula);
-            cadena += cliente + "\n";
+////            Cliente cliente = listaClientes.get(cedula);
+            cadena += listaClientes.get(cedula) + "\n";
         }
         return cadena;
     }
