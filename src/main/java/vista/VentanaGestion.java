@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vista;
+import controlador.GestionCliente;
 
 /**
  *
@@ -10,11 +11,11 @@ package vista;
  */
 public class VentanaGestion extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VentanaGestion
-     */
+    private GestionCliente gestionCliente;
+
     public VentanaGestion() {
         initComponents();
+        gestionCliente = new GestionCliente();
     }
 
     /**
@@ -132,7 +133,8 @@ public class VentanaGestion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOKMouseClicked
-    
+        accionEjecutada();
+        ejecutarAccion(opcion);
     }//GEN-LAST:event_btnOKMouseClicked
 
     private void btnVenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVenderMouseClicked
@@ -183,7 +185,38 @@ public class VentanaGestion extends javax.swing.JFrame {
         });
     }
     
-
+        private void ejecutarAccion(int opcion){
+     //clientes productos provedores
+        switch(opcion){
+            case 0 -> {//clientes
+                VentanaGestionCliente newFrame = new VentanaGestionCliente(gestionCliente);
+//                VentanaGestionCliente newFrame = new VentanaGestionCliente();
+                newFrame.setVisible(true);
+            }
+////////////            
+////////////            case 1 -> {//productos
+////////////                
+////////////                VentanaGestionProducto newFrame = new VentanaGestionProducto();
+////////////                newFrame.setVisible(true);
+//////////////                   
+////////////            }
+////////////                
+////////////            case 2 -> {//provedores
+////////////                VentanaGestionProvedor newFrame = new VentanaGestionProvedor();
+////////////                newFrame.setVisible(true);
+//////////////                
+////////////            }
+                
+            
+        }
+    }
+    
+    private void accionEjecutada(){
+        opcion = jComboBoxOpciones.getSelectedIndex();
+        
+    }
+    
+    private int opcion;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnOK;
     private javax.swing.JButton btnSurtir;

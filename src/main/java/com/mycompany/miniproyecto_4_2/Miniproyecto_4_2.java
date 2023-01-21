@@ -5,6 +5,9 @@
 
 package com.mycompany.miniproyecto_4_2;
 
+//(A)import controlador.GestionCliente;
+import vista.VentanaGestion;
+
 /**
  *
  * @author juanc
@@ -12,6 +15,9 @@ package com.mycompany.miniproyecto_4_2;
 public class Miniproyecto_4_2 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Inicio de programa");
+//(A)        GestionCliente gestionCliente = new GestionCliente;
+        VentanaGestion ventanaGestion = new VentanaGestion();
+        ventanaGestion.setVisible (true);
     }
 }

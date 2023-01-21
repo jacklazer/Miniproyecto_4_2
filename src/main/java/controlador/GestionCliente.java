@@ -4,49 +4,60 @@
  */
 package controlador;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import modelo.Cliente;
 
 
 /**
  *
- * @author aleja
+ * @author alejaXD
  */
-public class GestionCliente implements IGestionDatos{
-
-        private ArrayList <Cliente> listaClientes;
+//public class GestionCliente implements IGestionDatos{
+public class GestionCliente{
+    private static Map <Integer, Cliente> listaClientes;
+//    private Map <Integer, Cliente> listaClientes;
+//    private HashMap <Integer, Cliente> listaClientes;
+//    private static HashMap <Integer, Cliente> listaClientes;
     
+    public GestionCliente(){
+        listaClientes = new HashMap<>();
+//        listaClientes = new Map<>();
+    }
     
-//    public GestionCliente(){
-//        listaClientes = new ArrayList();
-//    }
-    
-    @Override
-    public void agregar() {
-    
+//    @Override
+    public void agregar(Integer cedula, String nombres, String apellidos, Integer tarjetaDeCredito) {
+        Cliente cliente = new Cliente(cedula, nombres, apellidos, tarjetaDeCredito);
+        listaClientes.put(cedula, cliente);
     }
 
-    @Override
+//    @Override
     public void actualizar() {
     
     }
 
-    @Override
+//    @Override
     public void eliminar() {
     
     }
 
-    @Override
+//    @Override
     public String listar() {
-    
-    return "holi";}
+        String cadena = "---------- Afiliados ----------\n";
+        for(int clave : listaClientes.keySet()){
+            Cliente cliente = listaClientes.get(clave);
+            cadena += cliente + "\n";
+        }
+        return cadena;
+    }
 
-    @Override
+//    @Override
     public void generarCSV() {
     
     }
 
-    @Override
+//    @Override
     public void restaurarDatos() {
     
     }

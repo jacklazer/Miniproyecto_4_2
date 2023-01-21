@@ -12,7 +12,6 @@ package modelo;
  */
 
 public class Cliente {
- 
     
     private final Integer cedula;
     private String nombres;
