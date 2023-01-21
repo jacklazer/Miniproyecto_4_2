@@ -77,6 +77,16 @@ public class GestionCliente{
         return listaClientes;
     }
     
+    public String obtenerApellidos(Integer cedula) {
+        return listaClientes.get(cedula).getApellidos();
+    }
     
+    public String obtenerNombres(Integer cedula) {
+        return listaClientes.get(cedula).getNombres();
+    }
+    
+        public String obtenerTarjetaDeCredito(Integer cedula) {
+        return String.valueOf(listaClientes.get(cedula).getTarjetaDeCredito());
+    }
     
 }

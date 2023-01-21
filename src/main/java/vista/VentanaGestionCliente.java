@@ -188,6 +188,11 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
         jLabel5.setText("C.C de la persona a actualizar");
 
         cargarBtn.setText("CARGAR");
+        cargarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cargarBtnActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel8.setText("TARJETA DE CREDITO:");
@@ -413,6 +418,15 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
 //        
 //        gestionCliente.actualizar(cedula, nombres, apellidos, tarjeta);
     }//GEN-LAST:event_actualizarBtnActionPerformed
+
+    private void cargarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarBtnActionPerformed
+        Integer cedula = Integer.valueOf(ccUpdateTextField5.getText());
+        
+        apellidosUpdatejTextField6.setText(gestionCliente.obtenerApellidos(cedula));
+        System.out.println(gestionCliente.obtenerApellidos(cedula));
+        nombresUpdatejTextField7.setText(gestionCliente.obtenerNombres(cedula));
+        jtarjetaUpdateTextField8.setText(gestionCliente.obtenerTarjetaDeCredito(cedula));
+    }//GEN-LAST:event_cargarBtnActionPerformed
 
     /**
      * @param args the command line arguments
