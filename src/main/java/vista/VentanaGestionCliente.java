@@ -7,6 +7,7 @@ package vista;
 import controlador.GestionCliente;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import javax.swing.JOptionPane;
 import modelo.Cliente;
 
@@ -324,14 +325,46 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarBtnActionPerformed
-        Integer cedula = Integer.valueOf(ccjTextField2.getText());
-        String nombres = nombresjTextField1.getText();
-        String apellidos = apellidosjTextField3.getText();
-        Integer tarjeta = Integer.valueOf(jtarjetaTextField4.getText());
+       
         
-//        Cliente cliente = new Cliente(cedula, nombres, apellidos, tarjeta);
-        gestionCliente.agregar(cedula, nombres, apellidos, tarjeta);
-        JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
+        
+                String cedulaPreguntada = ccjTextField2.getText();
+                String nombres = nombresjTextField1.getText();
+                String apellidos = apellidosjTextField3.getText();
+                String tarjetaPreguntada = jtarjetaTextField4.getText();
+
+                if (isNotNumeric(cedulaPreguntada) || isNotNumeric(tarjetaPreguntada)){
+                
+                JOptionPane.showMessageDialog(null, "Por favor ingrese una cedula y/o una tarjeta valida");
+                
+                }else{
+                
+                Integer intCedula =Integer.parseInt(cedulaPreguntada);
+                Integer intTarjeta = Integer.parseInt(tarjetaPreguntada);
+                
+                    if(GestionCliente.getListaClientes().containsKey(intCedula)){
+                        JOptionPane.showMessageDialog(null, "La cedula "+ cedulaPreguntada + " ya existe");
+                        
+                    }else{
+
+                        gestionCliente.agregar(intCedula, nombres, apellidos, intTarjeta);
+                        JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
+                    }
+                }
+
+               
+//        Integer cedula = Integer.valueOf(ccjTextField2.getText());
+//        String nombres = nombresjTextField1.getText();
+//        String apellidos = apellidosjTextField3.getText();
+//        Integer tarjeta = Integer.valueOf(jtarjetaTextField4.getText());
+//        
+//          
+//        gestionCliente.agregar(cedula, nombres, apellidos, tarjeta);
+//        JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
+        
+        
+        
+        
     }//GEN-LAST:event_registrarBtnActionPerformed
 
     private void consultarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarBtnActionPerformed
@@ -373,6 +406,18 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
             }
         });
     }
+    
+    
+        public static boolean isNotNumeric(String s)
+    {
+        try {
+            Integer.parseInt(s);
+        } catch (NumberFormatException ex) {
+            return true;
+        }
+        return false;
+    }
+        
     private GestionCliente gestionCliente;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actualizarBtn;
