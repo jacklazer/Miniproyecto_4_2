@@ -55,8 +55,8 @@ public class GestionCliente{
 //    @Override
     public String listar() {
         String cadena = "---------- Afiliados ----------\n";
-        for(int clave : listaClientes.keySet()){
-            Cliente cliente = listaClientes.get(clave);
+        for(int cedula : listaClientes.keySet()){
+            Cliente cliente = listaClientes.get(cedula);
             cadena += cliente + "\n";
         }
         return cadena;
