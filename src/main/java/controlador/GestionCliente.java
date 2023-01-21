@@ -7,6 +7,7 @@ package controlador;
 //import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JOptionPane;
 import modelo.Cliente;
 
 
@@ -33,8 +34,17 @@ public class GestionCliente{
     }
 
 //    @Override
-    public void actualizar() {
-    
+    public void actualizar(Integer cedula, String nombres, String apellidos, Integer tarjetaDeCredito) {
+        if(listaClientes.containsKey(cedula)){
+            if (nombres != null)
+                (listaClientes.get(cedula)).setNombres(nombres);
+            if (nombres != null)
+                (listaClientes.get(cedula)).setApellidos(apellidos);
+            if (nombres != null)
+                (listaClientes.get(cedula)).setTarjetaDeCredito(tarjetaDeCredito);
+        } else {
+            JOptionPane.showMessageDialog(null, "El usuario no se encuentra registrado en la lista de afiliados");
+        }
     }
 
 //    @Override

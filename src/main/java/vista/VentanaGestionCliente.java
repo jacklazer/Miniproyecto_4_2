@@ -331,6 +331,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
         
 //        Cliente cliente = new Cliente(cedula, nombres, apellidos, tarjeta);
         gestionCliente.agregar(cedula, nombres, apellidos, tarjeta);
+        JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
     }//GEN-LAST:event_registrarBtnActionPerformed
 
     private void consultarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarBtnActionPerformed
