@@ -72,5 +72,11 @@ public class GestionCliente{
     public void restaurarDatos() {
     
     }
+
+    public static Map<Integer, Cliente> getListaClientes() {
+        return listaClientes;
+    }
+    
+    
     
 }
