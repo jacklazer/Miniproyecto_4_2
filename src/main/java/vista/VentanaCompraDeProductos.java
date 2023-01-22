@@ -282,7 +282,7 @@ public class VentanaCompraDeProductos extends javax.swing.JFrame {
         String sCantidad = jTextField2.getText();
         
         if (isNotNumeric(sCodigo) || isNotNumeric(sCantidad)){
-            
+            JOptionPane.showMessageDialog(null, "Por favor ingrese un cóodigo O cantidad válida");
         }
         else {
             Integer codigo = Integer.valueOf(sCodigo);
@@ -301,7 +301,7 @@ public class VentanaCompraDeProductos extends javax.swing.JFrame {
         String sCantidad = jTextField2.getText();
         
         if (isNotNumeric(sCodigo) || isNotNumeric(sCantidad)){
-            
+            JOptionPane.showMessageDialog(null, "Por favor ingrese un cóodigo O cantidad válida");
         }
         else {
             Integer codigo = Integer.valueOf(sCodigo);
