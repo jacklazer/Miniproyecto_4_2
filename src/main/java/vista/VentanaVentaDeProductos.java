@@ -255,7 +255,24 @@ public class VentanaVentaDeProductos extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        Integer codigo = Integer.valueOf(jTextField1.getText());
+        Integer unidadesAComprar = Integer.valueOf(jTextField2.getText());
+        
+        Integer precio = gestionProducto.obtenerPrecioUnitarioDeVentaInteger(codigo)*unidadesAComprar;
+        
+        vectorDeCodigos.add(codigo);
+        vectorDeUnidadesAComprar.add(unidadesAComprar);
+        vectorDePrecios.add(precio);
+        
+        String textoDelCarritoDeCompras = "------------ Carrito de compras ------------\n";
+        
+        int c = 0;
+        for (int i : vectorDeCodigos){
+            textoDelCarritoDeCompras += "{Codigo: " + i + ", Producto: " + vectorDeUnidadesAComprar.get(c) + ", Precio unitario: " + gestionProducto.obtenerPrecioUnitarioDeVentaInteger(i)  + ", Precio total: " + vectorDePrecios.get(c) + "}\n";
+            c++;
+        }
+        
+        jTextArea1.setText(textoDelCarritoDeCompras);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
