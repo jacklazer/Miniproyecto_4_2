@@ -446,9 +446,30 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_cargarBtnActionPerformed
 
     private void eliminarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBtnActionPerformed
-        Integer cedula = Integer.valueOf(ccEliminarjTextField9.getText());
         
-        gestionCliente.eliminar(cedula);
+        String cedulaAeliminar = ccEliminarjTextField9.getText();
+        
+            if (isNotNumeric(cedulaAeliminar)){
+                
+                JOptionPane.showMessageDialog(null, "Por favor ingrese una cedula válida");
+                
+                }else{
+                
+                Integer intCedulaAleiminar =Integer.parseInt(cedulaAeliminar);
+                
+                    if(GestionCliente.getListaClientes().containsKey(intCedulaAleiminar)){
+                        
+                       gestionCliente.eliminar(intCedulaAleiminar);
+                    }else{
+
+                        JOptionPane.showMessageDialog(null, "La cedula "+ cedulaAeliminar + " no existe");
+                    }
+                }
+        
+        
+        
+        
+        
     }//GEN-LAST:event_eliminarBtnActionPerformed
 
     /**
