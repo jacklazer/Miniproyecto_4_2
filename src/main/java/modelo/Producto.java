@@ -5,9 +5,62 @@
 package modelo;
 
 /**
- *
- * @author aleja
+ * @authors:
+ * Jhonnier Hernandez
+ * Juan Cifuentes
+ * Alejandra Carvajal
  */
+
+
 public class Producto {
+    
+    private final String Codigo;
+    private String Nombre;
+    private Integer PrecioUnitarioDeCompra;
+    private Integer PrecioUnitarioDeVenta;
+
+    public Producto(String Codigo, String Nombre, Integer PrecioUnitarioDeCompra, Integer PrecioUnitarioDeVenta) {
+        this.Codigo = Codigo;
+        this.Nombre = Nombre;
+        this.PrecioUnitarioDeCompra = PrecioUnitarioDeCompra;
+        this.PrecioUnitarioDeVenta = PrecioUnitarioDeVenta;
+    }
+
+    public String getCodigo() {
+        return Codigo;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public Integer getPrecioUnitarioDeCompra() {
+        return PrecioUnitarioDeCompra;
+    }
+
+    public void setPrecioUnitarioDeCompra(Integer PrecioUnitarioDeCompra) {
+        this.PrecioUnitarioDeCompra = PrecioUnitarioDeCompra;
+    }
+
+    public Integer getPrecioUnitarioDeVenta() {
+        return PrecioUnitarioDeVenta;
+    }
+
+    public void setPrecioUnitarioDeVenta(Integer PrecioUnitarioDeVenta) {
+        this.PrecioUnitarioDeVenta = PrecioUnitarioDeVenta;
+    }
+    
+    
+    @Override
+    public String toString() {
+        return "Producto{" + "codigo=" + this.getCodigo() + ", nombre=" + this.getNombre() +
+               ", precio unitario de compra=" + this.getPrecioUnitarioDeCompra() + 
+               ", precio unitario de venta=" + this.getPrecioUnitarioDeVenta() + '}';
+    }
+    
     
 }

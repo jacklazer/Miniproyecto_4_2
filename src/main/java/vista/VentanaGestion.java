@@ -138,14 +138,16 @@ public class VentanaGestion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOKMouseClicked
 
     private void btnVenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVenderMouseClicked
-        // TODO add your handling code here:
         
+        VentanaVentaDeProductos newFrame = new VentanaVentaDeProductos();
+        newFrame.setVisible(true);
         
     }//GEN-LAST:event_btnVenderMouseClicked
 
     private void btnSurtirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSurtirMouseClicked
-        // TODO add your handling code here:
         
+        VentanaCompraDeProductos newFrame = new VentanaCompraDeProductos();
+        newFrame.setVisible(true);
         
     }//GEN-LAST:event_btnSurtirMouseClicked
 
@@ -190,22 +192,23 @@ public class VentanaGestion extends javax.swing.JFrame {
         switch(opcion){
             case 0 -> {//clientes
                 VentanaGestionCliente newFrame = new VentanaGestionCliente(gestionCliente);
-//                VentanaGestionCliente newFrame = new VentanaGestionCliente();
+                // VentanaGestionCliente newFrame = new VentanaGestionCliente();
                 newFrame.setVisible(true);
             }
-////////////            
-////////////            case 1 -> {//productos
-////////////                
-////////////                VentanaGestionProducto newFrame = new VentanaGestionProducto();
-////////////                newFrame.setVisible(true);
-//////////////                   
-////////////            }
-////////////                
-////////////            case 2 -> {//provedores
-////////////                VentanaGestionProvedor newFrame = new VentanaGestionProvedor();
-////////////                newFrame.setVisible(true);
-//////////////                
-////////////            }
+            
+            case 1 -> {//productos
+                VentanaGestionProducto newFrame = new VentanaGestionProducto(gestionProducto);
+                //VentanaGestionProducto newFrame = new VentanaGestionProducto();
+                newFrame.setVisible(true);
+//                   
+            }
+                
+            case 2 -> {//provedores
+                VentanaGestionProvedor newFrame = new VentanaGestionProvedor(gestionProvedor);
+                //VentanaGestionProvedor newFrame = new VentanaGestionProvedor();
+                newFrame.setVisible(true);
+//                
+            }
                 
             
         }
