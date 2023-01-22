@@ -162,11 +162,16 @@ public class GestionProducto {
         return String.valueOf(listaProductos.get(codigo).getPrecioUnitarioDeVenta());
     }
     
+    public void comprarUnidades(Integer codigo, Integer cantidad) {
+        listaProductos.get(codigo).setCantidadDeUnidadesDisponibles(listaProductos.get(codigo).getCantidadDeUnidadesDisponibles()+cantidad);
+    }
+    
 //    public boolean productoEnLista(Integer codigo) {
 //        for(int codigo : listaProductos.keySet()){
 //            lista += listaProductos.get(codigo) + "\n";
 //        }
 //        return true;
 //    }
+
     
 }

@@ -184,6 +184,11 @@ public class VentanaCompraDeProductos extends javax.swing.JFrame {
         });
 
         jButton3.setText("SURTIR");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -290,6 +295,26 @@ public class VentanaCompraDeProductos extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String sCodigo = jTextField3.getText();
+        String sCantidad = jTextField2.getText();
+        
+        if (isNotNumeric(sCodigo) || isNotNumeric(sCantidad)){
+            
+        }
+        else {
+            Integer codigo = Integer.valueOf(sCodigo);
+            Integer cantidad = Integer.valueOf(sCantidad);
+            
+            gestionProducto.comprarUnidades(codigo, cantidad);
+//            String valorUnitario = String.valueOf(gestionProducto.obtenerPrecioUnitarioDeCompraInteger(codigo));
+//            String valorTotal = String.valueOf(gestionProducto.obtenerPrecioUnitarioDeCompraInteger(codigo)*cantidad);
+//            
+//            jTextField4.setText(valorUnitario);
+//            jTextField5.setText(valorTotal);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

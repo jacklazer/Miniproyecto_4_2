@@ -1,1 +1,1 @@
-Producto{Codigo: 111, Nombre: 111, Precio unitario de compra: 3000, Precio unitario de venta: 5000, Cantidad de unidades disponibles: 0}
+Producto{Codigo: 1, Nombre: jabon, Precio unitario de compra: 3000, Precio unitario de venta: 5000, Cantidad de unidades disponibles: 10}
