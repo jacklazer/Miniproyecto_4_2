@@ -151,8 +151,8 @@ public class GestionCliente{
 
                 while ((cadena1 = bufferedReader.readLine()) != null){
                     cadena2 = cadena1.replace("Cliente{Cedula: ", "");
-                    cadena1 = cadena2.replace(" Nombres: ", "");
-                    cadena2 = cadena1.replace(" Apellidos: ", "");
+                    cadena1 = cadena2.replace(" Apellidos: ", "");
+                    cadena2 = cadena1.replace(" Nombres: ", "");
                     cadena1 = cadena2.replace(" Tarjeta de credito: ", "");
                     cadena2 = cadena1.replace("}", "");
 //                    cadenaDatos += cadena2;
@@ -164,7 +164,7 @@ public class GestionCliente{
                         nombres = stringTokenizer.nextToken();
                         tarjetaDeCredito = Integer.valueOf(stringTokenizer.nextToken());
                         
-                        Cliente cliente = new Cliente(cedula, nombres, apellidos, tarjetaDeCredito);
+                        Cliente cliente = new Cliente(cedula, apellidos, nombres, tarjetaDeCredito);
                         listaClientes.put(cedula, cliente);
                     } 
                 }

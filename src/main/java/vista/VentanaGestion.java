@@ -244,6 +244,7 @@ public class VentanaGestion extends javax.swing.JFrame {
                     public void windowClosing(WindowEvent e) {
                         gestionProducto.generarCSV();
                         gestionCliente.generarCSV();
+                        gestionProvedor.generarCSV();
                         System.out.println("Estoy cerrando");
                         }
                     });

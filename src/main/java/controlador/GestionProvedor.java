@@ -123,12 +123,12 @@ public class GestionProvedor {
                     cadena2 = cadena1.replace("Provedor{", "");
                     cadena1 = cadena2.replace("Código: ", "");
                     cadena2 = cadena1.replace(" Nombre: ", "");
-                    cadena1 = cadena2.replace(" Lista de productos: ", "");
+                    cadena1 = cadena2.replace(" Lista de productos que provee: ", "");
                     cadena2 = cadena1.replace("}", "");
                     
                     stringTokenizer = new StringTokenizer(cadena2,",");
                     
-                    if (stringTokenizer.countTokens() == 4) {
+                    if (stringTokenizer.countTokens() == 3) {
                         codigo = Integer.valueOf(stringTokenizer.nextToken());
                         nombre = stringTokenizer.nextToken();
                         listaDeProductos = stringTokenizer.nextToken();

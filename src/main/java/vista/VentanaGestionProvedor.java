@@ -150,7 +150,7 @@ public class VentanaGestionProvedor extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "CONSULTAR", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 350));
 
-        consultarBtn.setText("CONSULTAR LISTA DE AFILIADOS");
+        consultarBtn.setText("CONSULTAR LISTA DE PROVEDORES");
         consultarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultarBtnActionPerformed(evt);
@@ -168,7 +168,7 @@ public class VentanaGestionProvedor extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addComponent(consultarBtn)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
             .addComponent(clientesjScrollPane2)
         );
         jPanel2Layout.setVerticalGroup(
