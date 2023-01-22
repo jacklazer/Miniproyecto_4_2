@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 Cliente{Cedula: 1, Nombres: 1, Apellidos: 1, Tarjeta de credito: 1}
 Cliente{Cedula: 2, Nombres: 1, Apellidos: 1, Tarjeta de credito: 1}
 Cliente{Cedula: 3, Nombres: 1, Apellidos: 1, Tarjeta de credito: 1}
+=======
+Cliente{cedula=1212, nombres=ss, apellidos=ss, tarjeta de credito=11}
+>>>>>>> 9b28f4a9ceba4e5fd169d297df231d8290b3426b

@@ -5,9 +5,12 @@
 package vista;
 
 import controlador.GestionCliente;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Cliente;
 
@@ -29,6 +32,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
     
     public VentanaGestionCliente(GestionCliente gestionCliente) {
         initComponents();
+        generarCSValCerrar();
         this.gestionCliente = gestionCliente;
     }
 
@@ -367,7 +371,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
             }
         }
         
-        gestionCliente.generarCSV();
+        //gestionCliente.generarCSV();
         
     }//GEN-LAST:event_registrarBtnActionPerformed
 
@@ -413,7 +417,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
             }
         }
 
-        gestionCliente.generarCSV();
+       // gestionCliente.generarCSV();
         
     }//GEN-LAST:event_actualizarBtnActionPerformed
 
@@ -466,7 +470,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
                 }
             }
         
-        gestionCliente.generarCSV();
+       // gestionCliente.generarCSV();
         
     }//GEN-LAST:event_eliminarBtnActionPerformed
 
@@ -516,6 +520,25 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
         }
         return false;
     }
+        
+        public void generarCSValCerrar(){
+        
+            try {
+                
+                addWindowListener(new WindowAdapter() {
+                    @Override
+                    public void windowClosing(WindowEvent e) {
+                        gestionCliente.generarCSV();
+                        System.out.println("Estoy cerrando");
+                        }
+                    });
+                        
+            }catch (Exception e){
+                e.printStackTrace();
+
+            }
+
+        }
         
     private GestionCliente gestionCliente;
     // Variables declaration - do not modify//GEN-BEGIN:variables
