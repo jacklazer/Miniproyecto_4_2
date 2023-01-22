@@ -4,8 +4,18 @@
  */
 package controlador;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import modelo.Producto;
 
 
@@ -26,34 +36,121 @@ public class GestionProducto {
 //        
     }
 
-    public void restaurarDatos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void agregar(Integer Codigo, String Nombre, Integer PrecioUnitarioDeCompra, Integer PrecioUnitarioDeVenta) {
+        Producto producto = new Producto(Codigo, Nombre, PrecioUnitarioDeCompra, PrecioUnitarioDeVenta);
+        listaProductos.put(Codigo, producto);
     }
-
-    public void generarCSV() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+    public void actualizar(Integer codigo, String nombre, Integer precioUnitarioDeCompra, Integer precioUnitarioDeVenta) {
+            if(listaProductos.containsKey(codigo)){
+            if (nombre != null)
+                (listaProductos.get(codigo)).setNombre(nombre);
+            if (precioUnitarioDeCompra != null)
+                (listaProductos.get(codigo)).setPrecioUnitarioDeCompra(precioUnitarioDeCompra);
+            if (precioUnitarioDeVenta != null)
+                (listaProductos.get(codigo)).setPrecioUnitarioDeVenta(precioUnitarioDeVenta);
+        } else {
+            JOptionPane.showMessageDialog(null, "El producto no se encuentra registrado en la lista de productos");
+        }
     }
-
-    public void eliminar(Integer intCedulaAleiminar) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+    public void eliminar(Integer codigo) {
+        
+        if(listaProductos.containsKey(codigo)){
+            listaProductos.remove(codigo);
+            JOptionPane.showMessageDialog(null, "Producto eliminado con exito del registro de productos");
+        } else {
+            JOptionPane.showMessageDialog(null, "El producto no se encuentra registrado en la lista de productos o el codigo ingresado es incorrecto");
+        }
     }
-
-    public void actualizar(Integer intCedulaIngresada, String apellidosNuevos, String nombresNuevos, Integer intTarjetaNueva) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    
     public String listar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+        String lista = "---------- Productos ----------\n";
+        for(int codigo : listaProductos.keySet()){
+            lista += listaProductos.get(codigo) + "\n";
+        }
+        return lista;
     }
+    
+    
+    public void generarCSV() {
 
-    public void agregar(Integer intCedula, String nombres, String apellidos, Integer intTarjeta) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String archivoCsv = "";
+        for(int codigo : listaProductos.keySet()){
+            archivoCsv += listaProductos.get(codigo) + "\n";
+        }
+        try {
+            FileOutputStream os = new FileOutputStream(new File("src\\main\\java\\persistencia\\productos_csv.txt"));
+            os.write(archivoCsv.getBytes());
+            System.out.println("Copiado con exito!");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+  
+    public void restaurarDatos() {
+        File archivo = new File("src\\main\\java\\persistencia\\productos_csv.txt");
+        StringTokenizer stringTokenizer;
+  
+        String cadena1;
+        String cadena2;
+        
+        Integer codigo;
+        String nombre;
+        Integer precioUnitarioDeCompra;
+        Integer precioUnitarioDeVenta;
+        
+        try {
+            FileReader fileReader = new FileReader(archivo);
+            try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+
+                while ((cadena1 = bufferedReader.readLine()) != null){
+                    cadena2 = cadena1.replace("Producto{Codigo: ", "");
+                    cadena1 = cadena2.replace(" Nombre: ", "");
+                    cadena2 = cadena1.replace(" Precio unitario de compra: ", "");
+                    cadena1 = cadena2.replace(" Precio unitario de venta: ", "");
+                    cadena2 = cadena1.replace("}", "");
+//                   
+                    stringTokenizer = new StringTokenizer(cadena2,",");
+//                    
+                    if (stringTokenizer.countTokens() == 4) {
+                        codigo = Integer.valueOf(stringTokenizer.nextToken());
+                        nombre = stringTokenizer.nextToken();
+                        precioUnitarioDeCompra = Integer.valueOf(stringTokenizer.nextToken());
+                        precioUnitarioDeVenta = Integer.valueOf(stringTokenizer.nextToken());
+                        
+                        Producto producto = new Producto(codigo, nombre, precioUnitarioDeCompra, precioUnitarioDeVenta);
+                        listaProductos.put(codigo, producto);
+                    } 
+                }
+            }
+        }
+         catch (FileNotFoundException ex) {
+            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+
     }
 
     public static Map<Integer, Producto> getListaProductos() {
         return listaProductos;
     }
     
+    public String obtenerNombre(Integer codigo) {
+        return listaProductos.get(codigo).getNombre();
+    }
     
+    public String obtenerPrecioUnitarioDeCompra(Integer codigo) {
+        return String.valueOf(listaProductos.get(codigo).getPrecioUnitarioDeCompra());
+    }
+    
+    public String obtenerPrecioUnitarioDeVenta(Integer codigo) {
+        return String.valueOf(listaProductos.get(codigo).getPrecioUnitarioDeVenta());
+    }
     
 }

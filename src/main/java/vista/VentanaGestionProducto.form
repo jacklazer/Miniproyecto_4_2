@@ -72,22 +72,22 @@
                       <Group type="102" attributes="0">
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="9" max="32767" attributes="0"/>
-                          <Component id="nombresjTextField1" min="-2" pref="63" max="-2" attributes="0"/>
+                          <Component id="precioCjTextField3" min="-2" pref="63" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jtarjetaTextField4" min="-2" pref="63" max="-2" attributes="0"/>
+                          <Component id="precioVjTextField4" min="-2" pref="63" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="ccjTextField2" min="-2" pref="63" max="-2" attributes="0"/>
+                          <Component id="codigojTextField2" min="-2" pref="63" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="apellidosjTextField3" min="-2" pref="63" max="-2" attributes="0"/>
+                          <Component id="nombrejTextField1" min="-2" pref="63" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -104,33 +104,34 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="ccjTextField2" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="codigojTextField2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="apellidosjTextField3" min="-2" max="-2" attributes="0"/>
+                      <Component id="nombrejTextField1" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="nombresjTextField1" min="-2" max="-2" attributes="0"/>
+                      <Component id="precioCjTextField3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jtarjetaTextField4" min="-2" max="-2" attributes="0"/>
+                      <Component id="precioVjTextField4" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="191" max="32767" attributes="0"/>
+                  <EmptySpace pref="209" max="32767" attributes="0"/>
                   <Component id="registrarBtn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -170,13 +171,13 @@
             <Property name="text" type="java.lang.String" value="PRECIO U/COMPRA:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="nombresjTextField1">
+        <Component class="javax.swing.JTextField" name="precioCjTextField3">
         </Component>
-        <Component class="javax.swing.JTextField" name="ccjTextField2">
+        <Component class="javax.swing.JTextField" name="codigojTextField2">
         </Component>
-        <Component class="javax.swing.JTextField" name="apellidosjTextField3">
+        <Component class="javax.swing.JTextField" name="nombrejTextField1">
         </Component>
-        <Component class="javax.swing.JTextField" name="jtarjetaTextField4">
+        <Component class="javax.swing.JTextField" name="precioVjTextField4">
         </Component>
         <Component class="javax.swing.JButton" name="registrarBtn">
           <Properties>
@@ -241,7 +242,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="clientesjTextArea1">
+            <Component class="javax.swing.JTextArea" name="productosjTextArea1">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
@@ -279,17 +280,17 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="apellidosUpdatejTextField6" min="-2" pref="63" max="-2" attributes="0"/>
+                                  <Component id="nombreUpdatejTextField6" min="-2" pref="63" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="nombresUpdatejTextField7" min="-2" pref="63" max="-2" attributes="0"/>
+                                  <Component id="precioCUpdatejTextField7" min="-2" pref="63" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jtarjetaUpdateTextField8" min="-2" pref="63" max="-2" attributes="0"/>
+                                  <Component id="precioVjUpdateTextField8" min="-2" pref="63" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -298,7 +299,7 @@
                           <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="cargarBtn" min="-2" max="-2" attributes="0"/>
-                              <Component id="ccUpdateTextField5" min="-2" pref="79" max="-2" attributes="0"/>
+                              <Component id="codUpdateTextField5" min="-2" pref="79" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -326,23 +327,23 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="ccUpdateTextField5" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="codUpdateTextField5" min="-2" pref="22" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="cargarBtn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="apellidosUpdatejTextField6" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="nombreUpdatejTextField6" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="nombresUpdatejTextField7" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="precioCUpdatejTextField7" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                      <Component id="jtarjetaUpdateTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="precioVjUpdateTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="143" max="32767" attributes="0"/>
                   <Component id="actualizarBtn" min="-2" max="-2" attributes="0"/>
@@ -357,7 +358,7 @@
             <Property name="text" type="java.lang.String" value="C&#xf3;digo del producto a actualizar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="ccUpdateTextField5">
+        <Component class="javax.swing.JTextField" name="codUpdateTextField5">
         </Component>
         <Component class="javax.swing.JButton" name="cargarBtn">
           <Properties>
@@ -367,7 +368,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cargarBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="nombresUpdatejTextField7">
+        <Component class="javax.swing.JTextField" name="precioCUpdatejTextField7">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
@@ -385,7 +386,7 @@
             <Property name="text" type="java.lang.String" value="PRECIO U/COMPRA:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtarjetaUpdateTextField8">
+        <Component class="javax.swing.JTextField" name="precioVjUpdateTextField8">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
@@ -395,7 +396,7 @@
             <Property name="text" type="java.lang.String" value="NOMBRE:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="apellidosUpdatejTextField6">
+        <Component class="javax.swing.JTextField" name="nombreUpdatejTextField6">
         </Component>
         <Component class="javax.swing.JButton" name="actualizarBtn">
           <Properties>
@@ -432,7 +433,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="ccEliminarjTextField9" min="-2" pref="79" max="-2" attributes="0"/>
+                              <Component id="codEliminarjTextField9" min="-2" pref="79" max="-2" attributes="0"/>
                               <Component id="eliminarBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -451,7 +452,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="ccEliminarjTextField9" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="codEliminarjTextField9" min="-2" pref="22" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="eliminarBtn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -473,7 +474,7 @@
             <Property name="text" type="java.lang.String" value="Codigo del producto a eliminar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="ccEliminarjTextField9">
+        <Component class="javax.swing.JTextField" name="codEliminarjTextField9">
         </Component>
       </SubComponents>
     </Container>

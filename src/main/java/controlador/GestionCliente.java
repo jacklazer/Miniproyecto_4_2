@@ -47,9 +47,9 @@ public class GestionCliente{
         if(listaClientes.containsKey(cedula)){
             if (nombres != null)
                 (listaClientes.get(cedula)).setNombres(nombres);
-            if (nombres != null)
+            if (apellidos != null)
                 (listaClientes.get(cedula)).setApellidos(apellidos);
-            if (nombres != null)
+            if (tarjetaDeCredito != null)
                 (listaClientes.get(cedula)).setTarjetaDeCredito(tarjetaDeCredito);
         } else {
             JOptionPane.showMessageDialog(null, "El usuario no se encuentra registrado en la lista de afiliados");
@@ -69,7 +69,7 @@ public class GestionCliente{
 
 
     public String listar() {
-        String lista = "---------- Afiliados ----------\n";
+        String lista = "---------- Clientes ----------\n";
         for(int cedula : listaClientes.keySet()){
             lista += listaClientes.get(cedula) + "\n";
         }
