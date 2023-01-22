@@ -81,7 +81,7 @@ public class GestionCliente{
             archivoCsv += listaClientes.get(cedula) + "\n";
         }
         try {
-            FileOutputStream os = new FileOutputStream(new File("src/persistencia/clientes_csv.txt"));
+            FileOutputStream os = new FileOutputStream(new File("src\\main\\java\\persistencia\\clientes_csv.txt"));
             os.write(archivoCsv.getBytes());
             System.out.println("Copiado con exito!");
         } catch (FileNotFoundException ex) {
