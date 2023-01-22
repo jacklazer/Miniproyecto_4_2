@@ -16,6 +16,7 @@ public class VentanaGestion extends javax.swing.JFrame {
     public VentanaGestion() {
         initComponents();
         gestionCliente = new GestionCliente();
+        gestionCliente.restaurarDatos();
     }
 
     /**

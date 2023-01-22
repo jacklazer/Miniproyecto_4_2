@@ -1,0 +1,3 @@
+Cliente{Cedula: 1, Nombres: 1, Apellidos: 1, Tarjeta de credito: 1}
+Cliente{Cedula: 2, Nombres: 1, Apellidos: 1, Tarjeta de credito: 1}
+Cliente{Cedula: 3, Nombres: 1, Apellidos: 1, Tarjeta de credito: 1}

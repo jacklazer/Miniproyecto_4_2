@@ -55,8 +55,8 @@ public class Cliente {
     
     @Override
     public String toString() {
-        return "Cliente{" + "cedula=" + this.getCedula() + ", nombres=" + this.getNombres() +
-        ", apellidos=" + this.getApellidos() + ", tarjeta de credito=" + this.getTarjetaDeCredito() + '}';
+        return "Cliente{" + "Cedula: " + this.getCedula() + ", Nombres: " + this.getNombres() +
+        ", Apellidos: " + this.getApellidos() + ", Tarjeta de credito: " + this.getTarjetaDeCredito() + "}";
     }
 
 }
