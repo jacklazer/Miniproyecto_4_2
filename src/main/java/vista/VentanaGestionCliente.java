@@ -362,18 +362,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
                     }
                 }
 
-               
-//        Integer cedula = Integer.valueOf(ccjTextField2.getText());
-//        String nombres = nombresjTextField1.getText();
-//        String apellidos = apellidosjTextField3.getText();
-//        Integer tarjeta = Integer.valueOf(jtarjetaTextField4.getText());
-//        
-//          
-//        gestionCliente.agregar(cedula, nombres, apellidos, tarjeta);
-//        JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
-        
-        
-        
+          
         
     }//GEN-LAST:event_registrarBtnActionPerformed
 
@@ -396,36 +385,59 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
                 Integer intCedulaIngresada =Integer.parseInt(cedulaIngresada);
                 
                     if(GestionCliente.getListaClientes().containsKey(intCedulaIngresada)){
-                        //actualizar(Integer cedula, String nombres, String apellidos, Integer tarjetaDeCredito)
-                        JOptionPane.showMessageDialog(null, "La cedula "+ cedulaIngresada + " ya existe");
+                        
+                    
+                    String apellidosNuevos = apellidosUpdatejTextField6.getText();
+                    String nombresNuevos = nombresUpdatejTextField7.getText();
+                    String tarjetaNueva = jtarjetaUpdateTextField8.getText();
+                    
+
+                        if (isNotNumeric(tarjetaNueva)){
+                        
+                            JOptionPane.showMessageDialog(null, "Ingrese una tarjeta válida");
+                        
+                        }else{
+                            
+                        Integer intTarjetaNueva = Integer.parseInt(tarjetaNueva);
+                        gestionCliente.actualizar(intCedulaIngresada, apellidosNuevos, nombresNuevos, intTarjetaNueva );
+                        
+                        }
                         
                     }else{
 
-                        gestionCliente.agregar(intCedulaIngresada, nombresNuevos, apellidosNuevos, intTarjetaNueva);
-                        JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
+                        JOptionPane.showMessageDialog(null, "La cedula "+ cedulaIngresada + " no existe");
                     }
                 }
         
         
-//        String nombresNuevos = apellidosUpdatejTextField6.getText();
-//        String apellidosNuevos = nombresUpdatejTextField7.getText();
-//        String tarjetaNueva = jtarjetaUpdateTextField8.getText();
-//                
-//        Integer cedula = Integer.valueOf(ccUpdateTextField5.getText());
-//        String apellidos = apellidosUpdatejTextField6.getText();
-//        String nombres = nombresUpdatejTextField7.getText();
-//        Integer tarjeta = Integer.valueOf(jtarjetaUpdateTextField8.getText());
-//        
-//        gestionCliente.actualizar(cedula, nombres, apellidos, tarjeta);
     }//GEN-LAST:event_actualizarBtnActionPerformed
 
     private void cargarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarBtnActionPerformed
-        Integer cedula = Integer.valueOf(ccUpdateTextField5.getText());
+        String cedulaIngresada = ccUpdateTextField5.getText();
         
-        apellidosUpdatejTextField6.setText(gestionCliente.obtenerApellidos(cedula));
-        System.out.println(gestionCliente.obtenerApellidos(cedula));
-        nombresUpdatejTextField7.setText(gestionCliente.obtenerNombres(cedula));
-        jtarjetaUpdateTextField8.setText(gestionCliente.obtenerTarjetaDeCredito(cedula));
+        
+                if (isNotNumeric(cedulaIngresada)){
+                
+                JOptionPane.showMessageDialog(null, "Por favor ingrese una cedula válida");
+                
+                }else{
+                
+                Integer intCedulaIngresada =Integer.parseInt(cedulaIngresada);
+                
+                    if(GestionCliente.getListaClientes().containsKey(intCedulaIngresada)){
+                        
+                        apellidosUpdatejTextField6.setText(gestionCliente.obtenerApellidos(intCedulaIngresada));
+                        System.out.println(gestionCliente.obtenerApellidos(intCedulaIngresada));
+                        nombresUpdatejTextField7.setText(gestionCliente.obtenerNombres(intCedulaIngresada));
+                        jtarjetaUpdateTextField8.setText(gestionCliente.obtenerTarjetaDeCredito(intCedulaIngresada));
+                        
+                    }else{
+
+                        JOptionPane.showMessageDialog(null, "La cedula "+ cedulaIngresada + " no existe");
+                    }
+                }
+        
+        
     }//GEN-LAST:event_cargarBtnActionPerformed
 
     /**
