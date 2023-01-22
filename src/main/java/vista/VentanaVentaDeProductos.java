@@ -6,6 +6,7 @@ package vista;
 
 import controlador.GestionProducto;
 import controlador.GestionProvedor;
+import java.util.Vector;
 
 /**
  * @authors:
@@ -14,6 +15,11 @@ import controlador.GestionProvedor;
  * Alejandra Carvajal
  */
 public class VentanaVentaDeProductos extends javax.swing.JFrame {
+    
+    Vector<Integer> vectorDeCodigos;
+    Vector<Integer> vectorDeUnidadesAComprar;
+    Vector<Integer> vectorDePrecios;
+    
 
     /**
      * Creates new form VentanaVentaDeProductos
@@ -25,6 +31,10 @@ public class VentanaVentaDeProductos extends javax.swing.JFrame {
         initComponents();
         this.gestionProducto = gestionProducto;
         this.gestionProvedor = gestionProvedor;
+        
+        vectorDeCodigos = new Vector<>();
+        vectorDeUnidadesAComprar = new Vector<>();
+        vectorDePrecios = new Vector<>();
     }
 
     /**
