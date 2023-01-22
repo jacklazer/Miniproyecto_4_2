@@ -36,13 +36,13 @@ public class GestionCliente{
 //        listaClientes = new Map<>();
     }
     
-//    @Override
+
     public void agregar(Integer cedula, String nombres, String apellidos, Integer tarjetaDeCredito) {
         Cliente cliente = new Cliente(cedula, nombres, apellidos, tarjetaDeCredito);
         listaClientes.put(cedula, cliente);
     }
 
-//    @Override
+
     public void actualizar(Integer cedula, String nombres, String apellidos, Integer tarjetaDeCredito) {
         if(listaClientes.containsKey(cedula)){
             if (nombres != null)
@@ -56,7 +56,7 @@ public class GestionCliente{
         }
     }
 
-//    @Override
+
     public void eliminar(Integer cedula) {
         
         if(listaClientes.containsKey(cedula)){
@@ -67,7 +67,7 @@ public class GestionCliente{
         }
     }
 
-//    @Override
+
     public String listar() {
         String lista = "---------- Afiliados ----------\n";
         for(int cedula : listaClientes.keySet()){
@@ -76,9 +76,9 @@ public class GestionCliente{
         return lista;
     }
 
-//    @Override
+
     public void generarCSV() {
-//        Cliente cliente;
+
         String archivoCsv = "";
         for(int cedula : listaClientes.keySet()){
             archivoCsv += listaClientes.get(cedula) + "\n";
@@ -94,7 +94,7 @@ public class GestionCliente{
         }
     }
 
-//    @Override
+
     public void restaurarDatos() {
         File archivo = new File("src\\main\\java\\persistencia\\clientes_csv.txt");
         StringTokenizer stringTokenizer;
