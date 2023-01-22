@@ -82,6 +82,11 @@ public class VentanaGestion extends javax.swing.JFrame {
                 btnVenderMouseClicked(evt);
             }
         });
+        btnVender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVenderActionPerformed(evt);
+            }
+        });
 
         btnSurtir.setBackground(new java.awt.Color(0, 204, 204));
         btnSurtir.setText("SURTIR");
@@ -161,7 +166,7 @@ public class VentanaGestion extends javax.swing.JFrame {
 
     private void btnVenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVenderMouseClicked
         
-        VentanaVentaDeProductos newFrame = new VentanaVentaDeProductos();
+        VentanaVentaDeProductos newFrame = new VentanaVentaDeProductos(gestionProducto,gestionProvedor);
         newFrame.setVisible(true);
         
     }//GEN-LAST:event_btnVenderMouseClicked
@@ -176,6 +181,10 @@ public class VentanaGestion extends javax.swing.JFrame {
     private void btnSurtirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSurtirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSurtirActionPerformed
+
+    private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVenderActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,6 +4,9 @@
  */
 package vista;
 
+import controlador.GestionProducto;
+import controlador.GestionProvedor;
+
 /**
  * @authors:
  * Jhonnier Hernandez
@@ -16,7 +19,12 @@ public class VentanaVentaDeProductos extends javax.swing.JFrame {
      * Creates new form VentanaVentaDeProductos
      */
     public VentanaVentaDeProductos() {
+    }
+    
+    public VentanaVentaDeProductos(GestionProducto gestionProducto,GestionProvedor gestionProvedor) {
         initComponents();
+        this.gestionProducto = gestionProducto;
+        this.gestionProvedor = gestionProvedor;
     }
 
     /**
@@ -55,6 +63,11 @@ public class VentanaVentaDeProductos extends javax.swing.JFrame {
         jLabel1.setText("CODIGO DEL PRODUCTO:");
 
         jButton2.setText("AGREGAR AL CARRITO");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("NÚMERO DE UNIDADES:");
 
@@ -79,9 +92,7 @@ public class VentanaVentaDeProductos extends javax.swing.JFrame {
                         .addComponent(jButton2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(22, 22, 22)))
@@ -233,6 +244,10 @@ public class VentanaVentaDeProductos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -267,7 +282,9 @@ public class VentanaVentaDeProductos extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    private GestionProducto gestionProducto;
+    private GestionProvedor gestionProvedor;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -288,4 +305,13 @@ public class VentanaVentaDeProductos extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
-}
+
+    public static boolean isNotNumeric(String s)
+    {
+        try {
+            Integer.parseInt(s);
+        } catch (NumberFormatException ex) {
+            return true;
+        }
+        return false;
+    }}
