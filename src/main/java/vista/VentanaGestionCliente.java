@@ -367,6 +367,8 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
             }
         }
         
+        gestionCliente.generarCSV();
+        
     }//GEN-LAST:event_registrarBtnActionPerformed
 
     private void consultarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarBtnActionPerformed
@@ -374,46 +376,44 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_consultarBtnActionPerformed
 
     private void actualizarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarBtnActionPerformed
-        
-        
 
-                String cedulaIngresada = ccUpdateTextField5.getText();
+        String cedulaIngresada = ccUpdateTextField5.getText();
 
 
-                if (isNotNumeric(cedulaIngresada)){
-                
-                JOptionPane.showMessageDialog(null, "Por favor ingrese una cedula válida");
-                
+        if (isNotNumeric(cedulaIngresada)){
+
+        JOptionPane.showMessageDialog(null, "Por favor ingrese una cedula válida");
+
+        }else{
+
+        Integer intCedulaIngresada =Integer.parseInt(cedulaIngresada);
+
+            if(GestionCliente.getListaClientes().containsKey(intCedulaIngresada)){
+
+
+            String apellidosNuevos = apellidosUpdatejTextField6.getText();
+            String nombresNuevos = nombresUpdatejTextField7.getText();
+            String tarjetaNueva = jtarjetaUpdateTextField8.getText();
+
+
+                if (isNotNumeric(tarjetaNueva)){
+
+                    JOptionPane.showMessageDialog(null, "Ingrese una tarjeta válida");
+
                 }else{
-                
-                Integer intCedulaIngresada =Integer.parseInt(cedulaIngresada);
-                
-                    if(GestionCliente.getListaClientes().containsKey(intCedulaIngresada)){
-                        
-                    
-                    String apellidosNuevos = apellidosUpdatejTextField6.getText();
-                    String nombresNuevos = nombresUpdatejTextField7.getText();
-                    String tarjetaNueva = jtarjetaUpdateTextField8.getText();
-                    
 
-                        if (isNotNumeric(tarjetaNueva)){
-                        
-                            JOptionPane.showMessageDialog(null, "Ingrese una tarjeta válida");
-                        
-                        }else{
-                            
-                        Integer intTarjetaNueva = Integer.parseInt(tarjetaNueva);
-                        gestionCliente.actualizar(intCedulaIngresada, apellidosNuevos, nombresNuevos, intTarjetaNueva );
-                        
-                        }
-                        
-                    }else{
+                Integer intTarjetaNueva = Integer.parseInt(tarjetaNueva);
+                gestionCliente.actualizar(intCedulaIngresada, apellidosNuevos, nombresNuevos, intTarjetaNueva );
 
-                        JOptionPane.showMessageDialog(null, "La cedula "+ cedulaIngresada + " no existe");
-                    }
                 }
 
-        
+            }else{
+
+                JOptionPane.showMessageDialog(null, "La cedula "+ cedulaIngresada + " no existe");
+            }
+        }
+
+        gestionCliente.generarCSV();
         
     }//GEN-LAST:event_actualizarBtnActionPerformed
 
