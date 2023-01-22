@@ -18,12 +18,14 @@ public class Producto {
     private String Nombre;
     private Integer PrecioUnitarioDeCompra;
     private Integer PrecioUnitarioDeVenta;
+    private Integer cantidadDeUnidades;
 
     public Producto(Integer Codigo, String Nombre, Integer PrecioUnitarioDeCompra, Integer PrecioUnitarioDeVenta) {
         this.Codigo = Codigo;
         this.Nombre = Nombre;
         this.PrecioUnitarioDeCompra = PrecioUnitarioDeCompra;
         this.PrecioUnitarioDeVenta = PrecioUnitarioDeVenta;
+        cantidadDeUnidades = 0;
     }
 
     public Integer getCodigo() {

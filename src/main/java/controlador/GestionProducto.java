@@ -149,8 +149,19 @@ public class GestionProducto {
         return String.valueOf(listaProductos.get(codigo).getPrecioUnitarioDeCompra());
     }
     
+    public Integer obtenerPrecioUnitarioDeCompraInteger(Integer codigo) {
+        return listaProductos.get(codigo).getPrecioUnitarioDeCompra();
+    }
+    
     public String obtenerPrecioUnitarioDeVenta(Integer codigo) {
         return String.valueOf(listaProductos.get(codigo).getPrecioUnitarioDeVenta());
     }
+    
+//    public boolean productoEnLista(Integer codigo) {
+//        for(int codigo : listaProductos.keySet()){
+//            lista += listaProductos.get(codigo) + "\n";
+//        }
+//        return true;
+//    }
     
 }

@@ -177,6 +177,11 @@ public class VentanaCompraDeProductos extends javax.swing.JFrame {
         });
 
         jButton2.setText("CONSULTAR PRECIO");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("SURTIR");
 
@@ -258,13 +263,33 @@ public class VentanaCompraDeProductos extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Integer codigo = Integer.valueOf(jTextField1.getText());
-        if (jTextField1.getText() == null || !gestionProvedor.getListaProvedores().containsKey(codigo)){
+        String sCodigo = jTextField1.getText();
+        if (isNotNumeric(sCodigo)){
             JOptionPane.showMessageDialog(null, gestionProvedor.listar());
         } else{
+            Integer codigo = Integer.valueOf(jTextField1.getText());
             jTextArea1.setText(gestionProvedor.obtenerListaDeProductos(codigo));
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String sCodigo = jTextField3.getText();
+        String sCantidad = jTextField2.getText();
+        
+        if (isNotNumeric(sCodigo) || isNotNumeric(sCantidad)){
+            
+        }
+        else {
+            Integer codigo = Integer.valueOf(sCodigo);
+            Integer cantidad = Integer.valueOf(sCantidad);
+            String valorUnitario = String.valueOf(gestionProducto.obtenerPrecioUnitarioDeCompraInteger(codigo));
+            String valorTotal = String.valueOf(gestionProducto.obtenerPrecioUnitarioDeCompraInteger(codigo)*cantidad);
+            
+            jTextField4.setText(valorUnitario);
+            jTextField5.setText(valorTotal);
+        }
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -323,4 +348,14 @@ public class VentanaCompraDeProductos extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
+
+    public static boolean isNotNumeric(String s)
+    {
+        try {
+            Integer.parseInt(s);
+        } catch (NumberFormatException ex) {
+            return true;
+        }
+        return false;
+    }
 }
