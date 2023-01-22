@@ -343,31 +343,29 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
        
         
         
-                String cedulaPreguntada = ccjTextField2.getText();
-                String nombres = nombresjTextField1.getText();
-                String apellidos = apellidosjTextField3.getText();
-                String tarjetaPreguntada = jtarjetaTextField4.getText();
+        String cedulaPreguntada = ccjTextField2.getText();
+        String nombres = nombresjTextField1.getText();
+        String apellidos = apellidosjTextField3.getText();
+        String tarjetaPreguntada = jtarjetaTextField4.getText();
 
-                if (isNotNumeric(cedulaPreguntada) || isNotNumeric(tarjetaPreguntada)){
+        if (isNotNumeric(cedulaPreguntada) || isNotNumeric(tarjetaPreguntada)){
+        
+        JOptionPane.showMessageDialog(null, "Por favor ingrese una cedula y/o una tarjeta valida");
+        
+        }else{
+        
+        Integer intCedula =Integer.parseInt(cedulaPreguntada);
+        Integer intTarjeta = Integer.parseInt(tarjetaPreguntada);
+        
+            if(GestionCliente.getListaClientes().containsKey(intCedula)){
+                JOptionPane.showMessageDialog(null, "La cedula "+ cedulaPreguntada + " ya existe");
                 
-                JOptionPane.showMessageDialog(null, "Por favor ingrese una cedula y/o una tarjeta valida");
-                
-                }else{
-                
-                Integer intCedula =Integer.parseInt(cedulaPreguntada);
-                Integer intTarjeta = Integer.parseInt(tarjetaPreguntada);
-                
-                    if(GestionCliente.getListaClientes().containsKey(intCedula)){
-                        JOptionPane.showMessageDialog(null, "La cedula "+ cedulaPreguntada + " ya existe");
-                        
-                    }else{
+            }else{
 
-                        gestionCliente.agregar(intCedula, nombres, apellidos, intTarjeta);
-                        JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
-                    }
-                }
-
-          
+                gestionCliente.agregar(intCedula, nombres, apellidos, intTarjeta);
+                JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
+            }
+        }
         
     }//GEN-LAST:event_registrarBtnActionPerformed
 

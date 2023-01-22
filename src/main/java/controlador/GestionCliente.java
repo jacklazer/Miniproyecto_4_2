@@ -5,8 +5,14 @@
 package controlador;
 
 //import java.util.ArrayList;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.Cliente;
 
@@ -60,16 +66,29 @@ public class GestionCliente{
 
 //    @Override
     public String listar() {
-        String cadena = "---------- Afiliados ----------\n";
+        String lista = "---------- Afiliados ----------\n";
         for(int cedula : listaClientes.keySet()){
-            cadena += listaClientes.get(cedula) + "\n";
+            lista += listaClientes.get(cedula) + "\n";
         }
-        return cadena;
+        return lista;
     }
 
 //    @Override
     public void generarCSV() {
-    
+        Cliente cliente;
+        String archivoCsv = "";
+        for(int cedula : listaClientes.keySet()){
+            archivoCsv += listaClientes.get(cedula) + "\n";
+        }
+        try {
+            FileOutputStream os = new FileOutputStream(new File("src/persistencia/clientes_csv.txt"));
+            os.write(archivoCsv.getBytes());
+            System.out.println("Copiado con exito!");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 //    @Override
@@ -89,7 +108,7 @@ public class GestionCliente{
         return listaClientes.get(cedula).getNombres();
     }
     
-        public String obtenerTarjetaDeCredito(Integer cedula) {
+    public String obtenerTarjetaDeCredito(Integer cedula) {
         return String.valueOf(listaClientes.get(cedula).getTarjetaDeCredito());
     }
     
