@@ -155,7 +155,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "CONSULTAR", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 350));
 
-        consultarBtn.setText("CONSULTAR LISTA DE AFILIADOS");
+        consultarBtn.setText("CONSULTAR LISTA DE CLIENTES");
         consultarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultarBtnActionPerformed(evt);
@@ -173,7 +173,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addComponent(consultarBtn)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
             .addComponent(clientesjScrollPane2)
         );
         jPanel2Layout.setVerticalGroup(
@@ -344,12 +344,10 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarBtnActionPerformed
-       
-        
         
         String cedulaPreguntada = ccjTextField2.getText();
-        String nombres = nombresjTextField1.getText();
         String apellidos = apellidosjTextField3.getText();
+        String nombres = nombresjTextField1.getText();
         String tarjetaPreguntada = jtarjetaTextField4.getText();
 
         if (isNotNumeric(cedulaPreguntada) || isNotNumeric(tarjetaPreguntada)){
@@ -366,7 +364,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
                 
             }else{
 
-                gestionCliente.agregar(intCedula, nombres, apellidos, intTarjeta);
+                gestionCliente.agregar(intCedula, apellidos, nombres, intTarjeta);
                 JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
             }
         }
@@ -445,8 +443,6 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "La cedula "+ cedulaIngresada + " no existe");
                     }
                 }
-        
-        
     }//GEN-LAST:event_cargarBtnActionPerformed
 
     private void eliminarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBtnActionPerformed

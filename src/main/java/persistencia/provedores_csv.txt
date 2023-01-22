@@ -1,0 +1,2 @@
+Provedor{Código: 22, Nombre: 2, Lista de productos que provee: 2}
+Provedor{Código: 11, Nombre: Alejandra, Lista de productos que provee: 1111-2222}

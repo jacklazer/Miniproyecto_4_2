@@ -15,17 +15,17 @@ import java.util.Arrays;
 
 public class Provedor {
     
-    private final String Codigo;
+    private final Integer Codigo;
     private String Nombre;
-    private String[] ListaDeProductos;
+    private String ListaDeProductos;
 
-    public Provedor(String Codigo, String Nombre, String[] ListaDeProductos) {
+    public Provedor(Integer Codigo, String Nombre, String ListaDeProductos) {
         this.Codigo = Codigo;
         this.Nombre = Nombre;
         this.ListaDeProductos = ListaDeProductos;
     }
 
-    public String getCodigo() {
+    public Integer getCodigo() {
         return Codigo;
     }
 
@@ -37,18 +37,17 @@ public class Provedor {
         this.Nombre = Nombre;
     }
 
-    public String[] getListaDeProductos() {
+    public String getListaDeProductos() {
         return ListaDeProductos;
     }
 
-    public void setListaDeProductos(String[] ListaDeProductos) {
+    public void setListaDeProductos(String ListaDeProductos) {
         this.ListaDeProductos = ListaDeProductos;
     }
     
         @Override
     public String toString() {
-        return "Provedor{" + "código=" + this.getCodigo() + ", nombre=" + this.getNombre() +
-                ", lista de productos=" + Arrays.toString(this.getListaDeProductos()) + '}';
+        return "Provedor{" + "Código: " + this.getCodigo() + ", Nombre: " + this.getNombre() + ", Lista de productos que provee: " + this.getListaDeProductos() + "}";
     }
     
     

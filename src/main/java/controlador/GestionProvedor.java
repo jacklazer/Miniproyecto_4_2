@@ -29,112 +29,132 @@ public class GestionProvedor {
         listaProvedores = new HashMap<>();
     }
     
-    public void agregar(Integer cedula, String nombres, String apellidos, Integer tarjetaDeCredito) {
-//        Cliente cliente = new Cliente(cedula, nombres, apellidos, tarjetaDeCredito);
-//        listaClientes.put(cedula, cliente);
+    public void agregar(Integer codigo, String nombre, String listaDeProductos) {
+        Provedor provedor = new Provedor(codigo, nombre, listaDeProductos);
+        listaProvedores.put(codigo, provedor);
     }
 
-    public void actualizar(Integer cedula, String nombres, String apellidos, Integer tarjetaDeCredito) {
-//        if(listaClientes.containsKey(cedula)){
-//            if (nombres != null)
-//                (listaClientes.get(cedula)).setNombres(nombres);
-//            if (nombres != null)
-//                (listaClientes.get(cedula)).setApellidos(apellidos);
-//            if (nombres != null)
-//                (listaClientes.get(cedula)).setTarjetaDeCredito(tarjetaDeCredito);
-//        } else {
-//            JOptionPane.showMessageDialog(null, "El usuario no se encuentra registrado en la lista de afiliados");
-//        }
+    public void actualizar(Integer codigo, String nombre, String listaDeProductos) {
+        if(listaProvedores.containsKey(codigo)){
+            if (nombre != null)
+                (listaProvedores.get(codigo)).setNombre(nombre);
+            if (listaDeProductos != null)
+                (listaProvedores.get(codigo)).setListaDeProductos(listaDeProductos);
+        } else {
+            JOptionPane.showMessageDialog(null, "El provedor no se encuentra registrado en la lista de afiliados");
+        }
     }
 
-    public void eliminar(Integer cedula) {
-//        
-//        if(listaClientes.containsKey(cedula)){
-//            listaClientes.remove(cedula);
-//            JOptionPane.showMessageDialog(null, "Afiliado eliminado con exito del registro de afiliados");
-//        } else {
-//            JOptionPane.showMessageDialog(null, "El usuario no se encuentra registrado en la lista de afiliados o el id ingresado es incorrecto");
-//        }
+    public void eliminar(Integer codigo) {
+        if(listaProvedores.containsKey(codigo)){
+            listaProvedores.remove(codigo);
+            JOptionPane.showMessageDialog(null, "Provedor eliminado con exito del registro de afiliados");
+        } else {
+            JOptionPane.showMessageDialog(null, "El provedor no se encuentra registrado en la lista de provedores o el codigo ingresado es incorrecto");
+        }
     }
 
     public String listar() {
-        String lista = "---------- Afiliados ----------\n";
-//        for(int cedula : listaClientes.keySet()){
-//            lista += listaClientes.get(cedula) + "\n";
-//        }
+        String lista = "---------- Provedores ----------\n";
+        for(int codigo : listaProvedores.keySet()){
+            lista += listaProvedores.get(codigo) + "\n";
+        }
         return lista;
     }
 
     public void generarCSV() {
-//        String archivoCsv = "";
-//        for(int cedula : listaClientes.keySet()){
-//            archivoCsv += listaClientes.get(cedula) + "\n";
-//        }
-//        try {
-//            FileOutputStream os = new FileOutputStream(new File("src\\main\\java\\persistencia\\clientes_csv.txt"));
-//            os.write(archivoCsv.getBytes());
-//            System.out.println("Copiado con exito!");
-//        } catch (FileNotFoundException ex) {
-//            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (IOException ex) {
-//            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+        String archivoCsv = "";
+        for(int cedula : listaProvedores.keySet()){
+            archivoCsv += listaProvedores.get(cedula) + "\n";
+        }
+        try {
+            FileOutputStream os = new FileOutputStream(new File("src\\main\\java\\persistencia\\provedores_csv.txt"));
+            os.write(archivoCsv.getBytes());
+            System.out.println("Copiado con exito!");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void restaurarDatos() {
-//        File archivo = new File("src\\main\\java\\persistencia\\clientes_csv.txt");
-//        StringTokenizer stringTokenizer;
-//        
-//        String cadena1;
-//        String cadena2;
-//        
-//        Integer cedula;
-//        String apellidos;
-//        String nombres;
-//        Integer tarjetaDeCredito;
-//        
-//        try {
-//            FileReader fileReader = new FileReader(archivo);
-//            try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
-//                while ((cadena1 = bufferedReader.readLine()) != null){
-//                    cadena2 = cadena1.replace("Cliente{Cedula: ", "");
-//                    cadena1 = cadena2.replace(" Nombres: ", "");
-//                    cadena2 = cadena1.replace(" Apellidos: ", "");
-//                    cadena1 = cadena2.replace(" Tarjeta de credito: ", "");
-//                    cadena2 = cadena1.replace("}", "");
-//                    stringTokenizer = new StringTokenizer(cadena2,",");
-//                    if (stringTokenizer.countTokens() == 4) {
-//                        cedula = Integer.valueOf(stringTokenizer.nextToken());
-//                        apellidos = stringTokenizer.nextToken();
-//                        nombres = stringTokenizer.nextToken();
-//                        tarjetaDeCredito = Integer.valueOf(stringTokenizer.nextToken());
-//                        
-//                        Cliente cliente = new Cliente(cedula, nombres, apellidos, tarjetaDeCredito);
-//                        listaClientes.put(cedula, cliente);
-//                    } 
-//                }
-//            }
-//        }
-//         catch (FileNotFoundException ex) {
-//            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (IOException ex) {
-//            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+        File archivo = new File("src\\main\\java\\persistencia\\provedores_csv.txt");
+        StringTokenizer stringTokenizer;
+        
+        String cadena1;
+        String cadena2;
+        
+        Integer codigo;
+        String nombre;
+        String listaDeProductos;
+        
+        try {
+            FileReader fileReader = new FileReader(archivo);
+            try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+////////////                for(int i=1; i <= 3; i++){
+////////////                    cadena1 = bufferedReader.readLine();
+////////////                    
+////////////                    if (cadena1 == null) {
+////////////                        break;
+////////////                    }
+////////////                    
+////////////                    cadena2 = cadena1.replace("Provedor{", "");
+////////////                    cadena1 = cadena2.replace("Código: ", "");
+////////////                    cadena2 = cadena1.replace(" Nombre: ", "");
+////////////                    cadena1 = cadena2.replace(" Lista de productos: ", "");
+////////////                    cadena2 = cadena1.replace("}", "");
+////////////                    
+//////////////                    if (cadena2 == null) {
+//////////////                        break;
+//////////////                    }
+////////////                    
+////////////                    stringTokenizer = new StringTokenizer(cadena2,",");
+////////////                    
+////////////                    codigo = Integer.valueOf(stringTokenizer.nextToken());
+////////////                    nombre = stringTokenizer.nextToken();
+////////////                    listaDeProductos = stringTokenizer.nextToken();
+////////////
+////////////                    Provedor provedor = new Provedor(codigo, nombre, listaDeProductos);
+////////////                    listaProvedores.put(codigo, provedor);
+////////////                }
+                
+                while ((cadena1 = bufferedReader.readLine()) != null){
+                    cadena2 = cadena1.replace("Provedor{", "");
+                    cadena1 = cadena2.replace("Código: ", "");
+                    cadena2 = cadena1.replace(" Nombre: ", "");
+                    cadena1 = cadena2.replace(" Lista de productos que provee: ", "");
+                    cadena2 = cadena1.replace("}", "");
+                    
+                    stringTokenizer = new StringTokenizer(cadena2,",");
+                    
+                    if (stringTokenizer.countTokens() == 3) {
+                        codigo = Integer.valueOf(stringTokenizer.nextToken());
+                        nombre = stringTokenizer.nextToken();
+                        listaDeProductos = stringTokenizer.nextToken();
+
+                        Provedor provedor = new Provedor(codigo, nombre, listaDeProductos);
+                        listaProvedores.put(codigo, provedor);
+                    } 
+                }
+            }
+        }
+         catch (FileNotFoundException ex) {
+            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }
 
-//    public static Map<Integer, Provedor> getListaClientes() {
-//        return listaProvedores;
-//    }
-//    
-//    public String obtenerApellidos(Integer cedula) {
-//        return listaClientes.get(cedula).getApellidos();
-//    }
-//    
-//    public String obtenerNombres(Integer cedula) {
-//        return listaClientes.get(cedula).getNombres();
-//    }
-//    
-//    public String obtenerTarjetaDeCredito(Integer cedula) {
-//        return String.valueOf(listaClientes.get(cedula).getTarjetaDeCredito());
-//    }
+    public static Map<Integer, Provedor> getListaClientes() {
+        return listaProvedores;
+    }
+    
+    public String obtenerNombre(Integer codigo) {
+        return listaProvedores.get(codigo).getNombre();
+    }
+    
+    public String obtenerListaDeProductos(Integer codigo) {
+        return listaProvedores.get(codigo).getListaDeProductos();
+    }
 }
