@@ -1,0 +1,1 @@
+Cliente{cedula=1212, nombres=ss, apellidos=ss, tarjeta de credito=11}
