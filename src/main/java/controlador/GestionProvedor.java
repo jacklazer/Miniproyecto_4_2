@@ -19,9 +19,12 @@ import javax.swing.JOptionPane;
 import modelo.Provedor;
 
 /**
- *
- * @author juanc
+ * @authors:
+ * Jhonnier Hernandez
+ * Juan Cifuentes
+ * Alejandra Carvajal
  */
+
 public class GestionProvedor {
     private static Map <Integer, Provedor> listaProvedores;
     
@@ -121,7 +124,7 @@ public class GestionProvedor {
                 
                 while ((cadena1 = bufferedReader.readLine()) != null){
                     cadena2 = cadena1.replace("Provedor{", "");
-                    cadena1 = cadena2.replace("Código: ", "");
+                    cadena1 = cadena2.replace("Codigo: ", "");
                     cadena2 = cadena1.replace(" Nombre: ", "");
                     cadena1 = cadena2.replace(" Lista de productos que provee: ", "");
                     cadena2 = cadena1.replace("}", "");

@@ -16,8 +16,10 @@ import javax.swing.JOptionPane;
 
 
 /**
- *
- * @author aleja
+ * @authors:
+ * Jhonnier Hernandez
+ * Juan Cifuentes
+ * Alejandra Carvajal
  */
 public class VentanaGestionProducto extends javax.swing.JFrame {
 

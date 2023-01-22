@@ -15,8 +15,10 @@ import javax.swing.JOptionPane;
 import modelo.Cliente;
 
 /**
- *
- * @author aleja
+ * @authors:
+ * Jhonnier Hernandez
+ * Juan Cifuentes
+ * Alejandra Carvajal
  */
 public class VentanaGestionCliente extends javax.swing.JFrame {
 

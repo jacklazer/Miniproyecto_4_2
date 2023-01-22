@@ -9,8 +9,10 @@ package com.mycompany.miniproyecto_4_2;
 import vista.VentanaGestion;
 
 /**
- *
- * @author juanc
+ * @authors:
+ * Jhonnier Hernandez
+ * Juan Cifuentes
+ * Alejandra Carvajal
  */
 public class Miniproyecto_4_2 {
 
