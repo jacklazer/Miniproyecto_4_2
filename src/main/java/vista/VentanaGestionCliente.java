@@ -32,7 +32,6 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
     
     public VentanaGestionCliente(GestionCliente gestionCliente) {
         initComponents();
-        
         this.gestionCliente = gestionCliente;
     }
 

@@ -352,7 +352,7 @@ public class VentanaGestionProvedor extends javax.swing.JFrame {
         
         Integer intCodigo =Integer.valueOf(codigoPreguntado);
         
-            if(GestionProvedor.getListaClientes().containsKey(intCodigo)){
+            if(GestionProvedor.getListaProvedores().containsKey(intCodigo)){
                 JOptionPane.showMessageDialog(null, "El codigo "+ codigoPreguntado + " ya existe");
                 
             }else{
@@ -378,7 +378,7 @@ public class VentanaGestionProvedor extends javax.swing.JFrame {
 
             Integer intCodigoIngresado =Integer.valueOf(codigoIngresado);
 
-            if(GestionProvedor.getListaClientes().containsKey(intCodigoIngresado)){
+            if(GestionProvedor.getListaProvedores().containsKey(intCodigoIngresado)){
 
                 nombreUpdatejTextField6.setText(gestionProvedor.obtenerNombre(intCodigoIngresado));
                 listaDeProductosUpdatejTextField7.setText(gestionProvedor.obtenerListaDeProductos(intCodigoIngresado));
@@ -403,7 +403,7 @@ public class VentanaGestionProvedor extends javax.swing.JFrame {
 
             Integer intCodigoIngresado =Integer.valueOf(codigoIngresado);
 
-            if(GestionProvedor.getListaClientes().containsKey(intCodigoIngresado)){
+            if(GestionProvedor.getListaProvedores().containsKey(intCodigoIngresado)){
 
                 String nombreNuevo = nombreUpdatejTextField6.getText();
                 String listaDeProductosNueva = listaDeProductosUpdatejTextField7.getText();
@@ -428,7 +428,7 @@ public class VentanaGestionProvedor extends javax.swing.JFrame {
 
             Integer intCodigoAEliminar = Integer.valueOf(codigoAEliminar);
 
-                if(GestionProvedor.getListaClientes().containsKey(intCodigoAEliminar)){
+                if(GestionProvedor.getListaProvedores().containsKey(intCodigoAEliminar)){
                    gestionProvedor.eliminar(intCodigoAEliminar);
                 }else{
 

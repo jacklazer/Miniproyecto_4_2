@@ -4,6 +4,10 @@
  */
 package vista;
 
+import controlador.GestionProvedor;
+import controlador.GestionProducto;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aleja
@@ -14,7 +18,12 @@ public class VentanaCompraDeProductos extends javax.swing.JFrame {
      * Creates new form VentanaCompraDeProductos
      */
     public VentanaCompraDeProductos() {
+    }
+    
+    public VentanaCompraDeProductos(GestionProducto gestionProducto,GestionProvedor gestionProvedor) {
         initComponents();
+        this.gestionProducto = gestionProducto;
+        this.gestionProvedor = gestionProvedor;
     }
 
     /**
@@ -61,6 +70,11 @@ public class VentanaCompraDeProductos extends javax.swing.JFrame {
         });
 
         jButton1.setText("CONSULTAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -241,6 +255,15 @@ public class VentanaCompraDeProductos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Integer codigo = Integer.valueOf(jTextField1.getText());
+        if (jTextField1.getText() != null || !gestionProvedor.getListaProvedores().containsKey(codigo)){
+            jTextArea1.setText(gestionProvedor.obtenerListaDeProductos(codigo));
+        } else{
+            JOptionPane.showMessageDialog(null, gestionProvedor.listar());
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -275,7 +298,9 @@ public class VentanaCompraDeProductos extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    private GestionProducto gestionProducto;
+    private GestionProvedor gestionProvedor;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

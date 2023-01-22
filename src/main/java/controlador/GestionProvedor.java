@@ -146,7 +146,7 @@ public class GestionProvedor {
         } 
     }
 
-    public static Map<Integer, Provedor> getListaClientes() {
+    public static Map<Integer, Provedor> getListaProvedores() {
         return listaProvedores;
     }
     

@@ -88,6 +88,11 @@ public class VentanaGestion extends javax.swing.JFrame {
                 btnSurtirMouseClicked(evt);
             }
         });
+        btnSurtir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSurtirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -161,10 +166,14 @@ public class VentanaGestion extends javax.swing.JFrame {
 
     private void btnSurtirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSurtirMouseClicked
         
-        VentanaCompraDeProductos newFrame = new VentanaCompraDeProductos();
+        VentanaCompraDeProductos newFrame = new VentanaCompraDeProductos(gestionProducto,gestionProvedor);
         newFrame.setVisible(true);
         
     }//GEN-LAST:event_btnSurtirMouseClicked
+
+    private void btnSurtirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSurtirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSurtirActionPerformed
 
     /**
      * @param args the command line arguments
