@@ -259,10 +259,10 @@ public class VentanaCompraDeProductos extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Integer codigo = Integer.valueOf(jTextField1.getText());
-        if (jTextField1.getText() != null || !gestionProvedor.getListaProvedores().containsKey(codigo)){
-            jTextArea1.setText(gestionProvedor.obtenerListaDeProductos(codigo));
-        } else{
+        if (jTextField1.getText() == null || !gestionProvedor.getListaProvedores().containsKey(codigo)){
             JOptionPane.showMessageDialog(null, gestionProvedor.listar());
+        } else{
+            jTextArea1.setText(gestionProvedor.obtenerListaDeProductos(codigo));
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
