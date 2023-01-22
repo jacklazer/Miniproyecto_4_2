@@ -34,7 +34,7 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
     
     public VentanaGestionProducto(GestionProducto gestionProducto) {
         initComponents();
-        generarCSValCerrar();
+//        generarCSValCerrar();
         this.gestionProducto = gestionProducto;
     }
 
@@ -444,12 +444,12 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
                 Integer intCedulaIngresada =Integer.parseInt(cedulaIngresada);
                 
                     if(GestionCliente.getListaClientes().containsKey(intCedulaIngresada)){
-                        
-                        apellidosUpdatejTextField6.setText(gestionCliente.obtenerApellidos(intCedulaIngresada));
-                        System.out.println(gestionCliente.obtenerApellidos(intCedulaIngresada));
-                        nombresUpdatejTextField7.setText(gestionCliente.obtenerNombres(intCedulaIngresada));
-                        jtarjetaUpdateTextField8.setText(gestionCliente.obtenerTarjetaDeCredito(intCedulaIngresada));
-                        
+//                        
+//                        apellidosUpdatejTextField6.setText(gestionCliente.obtenerApellidos(intCedulaIngresada));
+//                        System.out.println(gestionCliente.obtenerApellidos(intCedulaIngresada));
+//                        nombresUpdatejTextField7.setText(gestionCliente.obtenerNombres(intCedulaIngresada));
+//                        jtarjetaUpdateTextField8.setText(gestionCliente.obtenerTarjetaDeCredito(intCedulaIngresada));
+//                        
                     }else{
 
                         JOptionPane.showMessageDialog(null, "La cedula "+ cedulaIngresada + " no existe");

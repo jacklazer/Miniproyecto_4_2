@@ -5,6 +5,7 @@
 package vista;
 import controlador.GestionCliente;
 import controlador.GestionProducto;
+import controlador.GestionProvedor;
 
 /**
  *
@@ -14,6 +15,7 @@ public class VentanaGestion extends javax.swing.JFrame {
 
     private GestionCliente gestionCliente;
     private GestionProducto gestionProducto;
+    private GestionProvedor gestionProvedor;
 
     public VentanaGestion() {
         initComponents();
@@ -22,6 +24,9 @@ public class VentanaGestion extends javax.swing.JFrame {
         
         gestionProducto = new GestionProducto();
         //gestionProducto.restaurarDatos();
+        
+        gestionProvedor = new GestionProvedor();
+        gestionProvedor.restaurarDatos();
     }
 
     /**
