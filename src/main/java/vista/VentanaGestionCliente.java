@@ -390,7 +390,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
 
         }else{
 
-        Integer intCedulaIngresada =Integer.parseInt(cedulaIngresada);
+        Integer intCedulaIngresada =Integer.valueOf(cedulaIngresada);
 
             if(GestionCliente.getListaClientes().containsKey(intCedulaIngresada)){
 
@@ -406,7 +406,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
 
                 }else{
 
-                Integer intTarjetaNueva = Integer.parseInt(tarjetaNueva);
+                Integer intTarjetaNueva = Integer.valueOf(tarjetaNueva);
                 gestionCliente.actualizar(intCedulaIngresada, apellidosNuevos, nombresNuevos, intTarjetaNueva );
 
                 }

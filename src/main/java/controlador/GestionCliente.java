@@ -5,12 +5,15 @@
 package controlador;
 
 //import java.util.ArrayList;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -75,7 +78,7 @@ public class GestionCliente{
 
 //    @Override
     public void generarCSV() {
-        Cliente cliente;
+//        Cliente cliente;
         String archivoCsv = "";
         for(int cedula : listaClientes.keySet()){
             archivoCsv += listaClientes.get(cedula) + "\n";
@@ -93,7 +96,74 @@ public class GestionCliente{
 
 //    @Override
     public void restaurarDatos() {
-    
+        File archivo = new File("src\\main\\java\\persistencia\\clientes_csv.txt");
+        StringTokenizer stringTokenizer;
+//        String cadenaDatos = "";
+        
+        String cadena1;
+        String cadena2;
+        
+        Integer cedula;
+        String apellidos;
+        String nombres;
+        Integer tarjetaDeCredito;
+        
+        try {
+            FileReader fileReader = new FileReader(archivo);
+            try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+////                cadena1 = bufferedReader.readLine();
+//                for(int i=1; i <= 4; i++){
+//                    cadena1 = bufferedReader.readLine();
+//                    cadena2 = cadena1.replace("Cliente{Cedula: ", "");
+//                    cadena1 = cadena2.replace(" Nombres: ", "");
+//                    cadena2 = cadena1.replace(" Apellidos: ", "");
+//                    cadena1 = cadena2.replace(" Tarjeta de credito: ", "");
+//                    cadena2 = cadena1.replace("}", "");
+//                    
+//                    stringTokenizer = new StringTokenizer(cadena2,",");
+//                    
+//                    cedula = Integer.valueOf(stringTokenizer.nextToken());
+//                    apellidos = stringTokenizer.nextToken();
+//                    nombres = stringTokenizer.nextToken();
+//                    tarjetaDeCredito = Integer.valueOf(stringTokenizer.nextToken());
+//
+//                    Cliente cliente = new Cliente(cedula, nombres, apellidos, tarjetaDeCredito);
+//                    listaClientes.put(cedula, cliente);
+//                    
+//                    if (cadena1 != null) {
+//                        break;
+//                    }
+//                }
+                while ((cadena1 = bufferedReader.readLine()) != null){
+                    cadena2 = cadena1.replace("Cliente{Cedula: ", "");
+                    cadena1 = cadena2.replace(" Nombres: ", "");
+                    cadena2 = cadena1.replace(" Apellidos: ", "");
+                    cadena1 = cadena2.replace(" Tarjeta de credito: ", "");
+                    cadena2 = cadena1.replace("}", "");
+//                    cadenaDatos += cadena2;
+                    stringTokenizer = new StringTokenizer(cadena2,",");
+//                    if (st.countTokens() % 4 == 0 && st.countTokens() != 0) {
+                    if (stringTokenizer.countTokens() == 4) {
+                        cedula = Integer.valueOf(stringTokenizer.nextToken());
+                        apellidos = stringTokenizer.nextToken();
+                        nombres = stringTokenizer.nextToken();
+                        tarjetaDeCredito = Integer.valueOf(stringTokenizer.nextToken());
+                        
+                        Cliente cliente = new Cliente(cedula, nombres, apellidos, tarjetaDeCredito);
+                        listaClientes.put(cedula, cliente);
+                    } 
+                }
+            }
+        }
+         catch (FileNotFoundException ex) {
+            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(GestionCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+//        finally {
+//            System.out.println("Los datos contenidos en afiliados_csv son: \n" + cadenaDatos);
+//            System.out.println("la lista de afiliados resultante es: " + listaClientes);
+//        }    
     }
 
     public static Map<Integer, Cliente> getListaClientes() {
