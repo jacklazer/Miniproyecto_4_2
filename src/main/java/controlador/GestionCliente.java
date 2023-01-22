@@ -48,17 +48,21 @@ public class GestionCliente{
     }
 
 //    @Override
-    public void eliminar() {
-    
+    public void eliminar(Integer cedula) {
+        
+        if(listaClientes.containsKey(cedula)){
+            listaClientes.remove(cedula);
+            JOptionPane.showMessageDialog(null, "Afiliado eliminado con exito del registro de afiliados");
+        } else {
+            JOptionPane.showMessageDialog(null, "El usuario no se encuentra registrado en la lista de afiliados o el id ingresado es incorrecto");
+        }
     }
 
 //    @Override
     public String listar() {
         String cadena = "---------- Afiliados ----------\n";
         for(int cedula : listaClientes.keySet()){
-////            Cliente cliente = listaClientes.get(cedula);
             cadena += listaClientes.get(cedula) + "\n";
-            //g
         }
         return cadena;
     }
