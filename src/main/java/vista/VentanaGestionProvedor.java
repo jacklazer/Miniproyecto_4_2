@@ -15,8 +15,10 @@ import javax.swing.JOptionPane;
 import modelo.Provedor;
 
 /**
- *
- * @author aleja
+ * @authors:
+ * Jhonnier Hernandez
+ * Juan Cifuentes
+ * Alejandra Carvajal
  */
 public class VentanaGestionProvedor extends javax.swing.JFrame {
 

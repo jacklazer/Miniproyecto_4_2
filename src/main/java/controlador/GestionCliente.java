@@ -21,8 +21,10 @@ import modelo.Cliente;
 
 
 /**
- *
- * @author alejaXD
+ * @authors:
+ * Jhonnier Hernandez
+ * Juan Cifuentes
+ * Alejandra Carvajal
  */
 
 //public class GestionCliente implements IGestionDatos{

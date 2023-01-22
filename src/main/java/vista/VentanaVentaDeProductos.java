@@ -5,8 +5,10 @@
 package vista;
 
 /**
- *
- * @author aleja
+ * @authors:
+ * Jhonnier Hernandez
+ * Juan Cifuentes
+ * Alejandra Carvajal
  */
 public class VentanaVentaDeProductos extends javax.swing.JFrame {
 

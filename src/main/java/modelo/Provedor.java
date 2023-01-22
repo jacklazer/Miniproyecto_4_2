@@ -47,7 +47,8 @@ public class Provedor {
     
         @Override
     public String toString() {
-        return "Provedor{" + "Código: " + this.getCodigo() + ", Nombre: " + this.getNombre() + ", Lista de productos que provee: " + this.getListaDeProductos() + "}";
+        return "Provedor{" + "Codigo: " + this.getCodigo() + ", Nombre: "
+                + this.getNombre() + ", Lista de productos que provee: " + this.getListaDeProductos() + "}";
     }
     
     

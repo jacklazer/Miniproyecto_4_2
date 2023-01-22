@@ -1,8 +1,6 @@
-
 Cliente{Cedula: 1, Apellidos: uwu, Nombres: 1a, Tarjeta de credito: 1}
 Cliente{Cedula: 2, Apellidos: 1, Nombres: 1, Tarjeta de credito: 1}
 Cliente{Cedula: 3, Apellidos: 1, Nombres: 1, Tarjeta de credito: 1}
 Cliente{Cedula: 19876, Apellidos: ya se pudo, Nombres: wiii, Tarjeta de credito: 666}
 Cliente{Cedula: 22, Apellidos: laura, Nombres: ramirez, Tarjeta de credito: 12345}
 Cliente{Cedula: 1006169971, Apellidos: CV, Nombres: Juan, Tarjeta de credito: 88888888}
-
