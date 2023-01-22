@@ -6,6 +6,8 @@ package vista;
 import controlador.GestionCliente;
 import controlador.GestionProducto;
 import controlador.GestionProvedor;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  *
@@ -19,11 +21,13 @@ public class VentanaGestion extends javax.swing.JFrame {
 
     public VentanaGestion() {
         initComponents();
+        generarCSValCerrar();
+                
         gestionCliente = new GestionCliente();
         gestionCliente.restaurarDatos();
         
         gestionProducto = new GestionProducto();
-        //gestionProducto.restaurarDatos();
+        gestionProducto.restaurarDatos();
         
         gestionProvedor = new GestionProvedor();
         gestionProvedor.restaurarDatos();
@@ -230,6 +234,26 @@ public class VentanaGestion extends javax.swing.JFrame {
         opcion = jComboBoxOpciones.getSelectedIndex();
         
     }
+    
+            public void generarCSValCerrar(){
+        
+            try {
+                
+                addWindowListener(new WindowAdapter() {
+                    @Override
+                    public void windowClosing(WindowEvent e) {
+                        gestionProducto.generarCSV();
+                        gestionCliente.generarCSV();
+                        System.out.println("Estoy cerrando");
+                        }
+                    });
+                        
+            }catch (Exception e){
+                e.printStackTrace();
+
+            }
+
+        }
     
     private int opcion;
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,0 +1,3 @@
+Producto{Codigo: 111222, Nombre: CSDCD, Precio unitario de compra: 33, Precio unitario de venta: 55}
+Producto{Codigo: 77, Nombre: HY, Precio unitario de compra: 456, Precio unitario de venta: 876}
+Producto{Codigo: 1199, Nombre: DF, Precio unitario de compra: 55, Precio unitario de venta: 77}

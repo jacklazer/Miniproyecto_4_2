@@ -46,10 +46,17 @@ public class GestionCliente{
 
     public void actualizar(Integer cedula, String apellidos, String nombres, Integer tarjetaDeCredito) {
         if(listaClientes.containsKey(cedula)){
+//<<<<<<< HEAD
             if (apellidos != null)
                 (listaClientes.get(cedula)).setApellidos(apellidos);
             if (nombres != null)
                 (listaClientes.get(cedula)).setNombres(nombres);
+//=======
+            if (nombres != null)
+                (listaClientes.get(cedula)).setNombres(nombres);
+            if (apellidos != null)
+                (listaClientes.get(cedula)).setApellidos(apellidos);
+//>>>>>>> e4954e7fef1631b4120fde3a2cab9547b63fb3d2
             if (tarjetaDeCredito != null)
                 (listaClientes.get(cedula)).setTarjetaDeCredito(tarjetaDeCredito);
         } else {

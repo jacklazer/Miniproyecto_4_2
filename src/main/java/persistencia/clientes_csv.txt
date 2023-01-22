@@ -1,1 +1,5 @@
-Cliente{Cedula: 1006169971, Apellidos: Cifuentes Vallejo, Nombres: Juan Sebastian, Tarjeta de credito: 88888888}
+Cliente{Cedula: 1, Apellidos: 1a, Nombres: uwu, Tarjeta de credito: 1}
+Cliente{Cedula: 2, Apellidos: 1, Nombres: 1, Tarjeta de credito: 1}
+Cliente{Cedula: 3, Apellidos: 1, Nombres: 1, Tarjeta de credito: 1}
+Cliente{Cedula: 19876, Apellidos: wiii, Nombres: ya se pudo, Tarjeta de credito: 666}
+Cliente{Cedula: 1006169971, Apellidos: Juan Sebastian, Nombres: Cifuentes Vallejo, Tarjeta de credito: 88888888}

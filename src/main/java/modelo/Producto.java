@@ -14,19 +14,19 @@ package modelo;
 
 public class Producto {
     
-    private final String Codigo;
+    private final Integer Codigo;
     private String Nombre;
     private Integer PrecioUnitarioDeCompra;
     private Integer PrecioUnitarioDeVenta;
 
-    public Producto(String Codigo, String Nombre, Integer PrecioUnitarioDeCompra, Integer PrecioUnitarioDeVenta) {
+    public Producto(Integer Codigo, String Nombre, Integer PrecioUnitarioDeCompra, Integer PrecioUnitarioDeVenta) {
         this.Codigo = Codigo;
         this.Nombre = Nombre;
         this.PrecioUnitarioDeCompra = PrecioUnitarioDeCompra;
         this.PrecioUnitarioDeVenta = PrecioUnitarioDeVenta;
     }
 
-    public String getCodigo() {
+    public Integer getCodigo() {
         return Codigo;
     }
 
@@ -57,9 +57,9 @@ public class Producto {
     
     @Override
     public String toString() {
-        return "Producto{" + "codigo=" + this.getCodigo() + ", nombre=" + this.getNombre() +
-               ", precio unitario de compra=" + this.getPrecioUnitarioDeCompra() + 
-               ", precio unitario de venta=" + this.getPrecioUnitarioDeVenta() + '}';
+        return "Producto{" + "Codigo: " + this.getCodigo() + ", Nombre: " + this.getNombre() +
+               ", Precio unitario de compra: " + this.getPrecioUnitarioDeCompra() + 
+               ", Precio unitario de venta: " + this.getPrecioUnitarioDeVenta() + "}";
     }
     
     

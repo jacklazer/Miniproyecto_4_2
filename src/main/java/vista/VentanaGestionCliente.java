@@ -32,7 +32,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
     
     public VentanaGestionCliente(GestionCliente gestionCliente) {
         initComponents();
-        generarCSValCerrar();
+        
         this.gestionCliente = gestionCliente;
     }
 
@@ -434,7 +434,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
                     if(GestionCliente.getListaClientes().containsKey(intCedulaIngresada)){
                         
                         apellidosUpdatejTextField6.setText(gestionCliente.obtenerApellidos(intCedulaIngresada));
-                        System.out.println(gestionCliente.obtenerApellidos(intCedulaIngresada));
+                        //System.out.println(gestionCliente.obtenerApellidos(intCedulaIngresada));
                         nombresUpdatejTextField7.setText(gestionCliente.obtenerNombres(intCedulaIngresada));
                         jtarjetaUpdateTextField8.setText(gestionCliente.obtenerTarjetaDeCredito(intCedulaIngresada));
                         
@@ -517,24 +517,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
         return false;
     }
         
-        public void generarCSValCerrar(){
-        
-            try {
-                
-                addWindowListener(new WindowAdapter() {
-                    @Override
-                    public void windowClosing(WindowEvent e) {
-                        gestionCliente.generarCSV();
-                        System.out.println("Estoy cerrando");
-                        }
-                    });
-                        
-            }catch (Exception e){
-                e.printStackTrace();
 
-            }
-
-        }
         
     private GestionCliente gestionCliente;
     // Variables declaration - do not modify//GEN-BEGIN:variables

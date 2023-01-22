@@ -4,7 +4,7 @@
  */
 package vista;
 
-import controlador.GestionCliente;
+
 import controlador.GestionProducto;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Objects;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import modelo.Cliente;
+
 
 /**
  *
@@ -34,7 +34,7 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
     
     public VentanaGestionProducto(GestionProducto gestionProducto) {
         initComponents();
-//        generarCSValCerrar();
+        
         this.gestionProducto = gestionProducto;
     }
 
@@ -53,30 +53,30 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        nombresjTextField1 = new javax.swing.JTextField();
-        ccjTextField2 = new javax.swing.JTextField();
-        apellidosjTextField3 = new javax.swing.JTextField();
-        jtarjetaTextField4 = new javax.swing.JTextField();
+        precioCjTextField3 = new javax.swing.JTextField();
+        codigojTextField2 = new javax.swing.JTextField();
+        nombrejTextField1 = new javax.swing.JTextField();
+        precioVjTextField4 = new javax.swing.JTextField();
         registrarBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         consultarBtn = new javax.swing.JButton();
         clientesjScrollPane2 = new javax.swing.JScrollPane();
-        clientesjTextArea1 = new javax.swing.JTextArea();
+        productosjTextArea1 = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        ccUpdateTextField5 = new javax.swing.JTextField();
+        codUpdateTextField5 = new javax.swing.JTextField();
         cargarBtn = new javax.swing.JButton();
-        nombresUpdatejTextField7 = new javax.swing.JTextField();
+        precioCUpdatejTextField7 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jtarjetaUpdateTextField8 = new javax.swing.JTextField();
+        precioVjUpdateTextField8 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        apellidosUpdatejTextField6 = new javax.swing.JTextField();
+        nombreUpdatejTextField6 = new javax.swing.JTextField();
         actualizarBtn = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         eliminarBtn = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        ccEliminarjTextField9 = new javax.swing.JTextField();
+        codEliminarjTextField9 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("GESTION PRODUCTO");
@@ -113,19 +113,19 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                        .addComponent(nombresjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(precioCjTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jtarjetaTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(precioVjTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ccjTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(codigojTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(apellidosjTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(nombrejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
@@ -137,26 +137,27 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(ccjTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel1)
+                        .addGap(3, 3, 3))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addGap(3, 3, 3)))
+                        .addComponent(codigojTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(apellidosjTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombrejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nombresjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(precioCjTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtarjetaTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(precioVjTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(2, 2, 2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
                 .addComponent(registrarBtn)
                 .addContainerGap())
         );
@@ -171,9 +172,9 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
             }
         });
 
-        clientesjTextArea1.setColumns(20);
-        clientesjTextArea1.setRows(5);
-        clientesjScrollPane2.setViewportView(clientesjTextArea1);
+        productosjTextArea1.setColumns(20);
+        productosjTextArea1.setRows(5);
+        clientesjScrollPane2.setViewportView(productosjTextArea1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -235,21 +236,21 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(apellidosUpdatejTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(nombreUpdatejTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(nombresUpdatejTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(precioCUpdatejTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtarjetaUpdateTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(precioVjUpdateTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(cargarBtn)
-                            .addComponent(ccUpdateTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(codUpdateTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(33, 33, 33))
             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -268,21 +269,21 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ccUpdateTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(codUpdateTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(cargarBtn)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(apellidosUpdatejTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreUpdatejTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nombresUpdatejTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(precioCUpdatejTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(15, 15, 15)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtarjetaUpdateTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(precioVjUpdateTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
                 .addComponent(actualizarBtn)
                 .addContainerGap())
@@ -309,7 +310,7 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ccEliminarjTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(codEliminarjTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(eliminarBtn)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
@@ -322,7 +323,7 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ccEliminarjTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(codEliminarjTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(eliminarBtn)
                 .addContainerGap())
@@ -357,102 +358,104 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
        
         
         
-        String cedulaPreguntada = ccjTextField2.getText();
-        String nombres = nombresjTextField1.getText();
-        String apellidos = apellidosjTextField3.getText();
-        String tarjetaPreguntada = jtarjetaTextField4.getText();
+        String codigoPreguntado = codigojTextField2.getText();
+        String nombre = nombrejTextField1.getText();
+        String precioUCompra = precioCjTextField3.getText();
+        String precioUVenta = precioVjTextField4.getText();
 
-        if (isNotNumeric(cedulaPreguntada) || isNotNumeric(tarjetaPreguntada)){
+        if (isNotNumeric(codigoPreguntado) || isNotNumeric(precioUCompra)|| isNotNumeric(precioUVenta)){
         
-        JOptionPane.showMessageDialog(null, "Por favor ingrese una cedula y/o una tarjeta valida");
+        JOptionPane.showMessageDialog(null, "Por favor ingrese una codigo y/o precios válidos");
         
         }else{
         
-        Integer intCedula =Integer.parseInt(cedulaPreguntada);
-        Integer intTarjeta = Integer.parseInt(tarjetaPreguntada);
+        Integer intCodigo =Integer.parseInt(codigoPreguntado);
+        Integer intPrecioUCompra = Integer.parseInt(precioUCompra);
+        Integer intPrecioUVenta = Integer.parseInt(precioUVenta);
         
-            if(GestionCliente.getListaClientes().containsKey(intCedula)){
-                JOptionPane.showMessageDialog(null, "La cedula "+ cedulaPreguntada + " ya existe");
+            if(GestionProducto.getListaProductos().containsKey(intCodigo)){
+                JOptionPane.showMessageDialog(null, "El código "+ codigoPreguntado + " ya existe");
                 
             }else{
 
-                gestionProducto.agregar(intCedula, nombres, apellidos, intTarjeta);
-                JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
+                gestionProducto.agregar(intCodigo, nombre, intPrecioUCompra, intPrecioUVenta);
+                JOptionPane.showMessageDialog(null, "Producto registrado exitosamente");
             }
         }
         
-        //gestionCliente.generarCSV();
+        
         
     }//GEN-LAST:event_registrarBtnActionPerformed
 
     private void consultarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarBtnActionPerformed
-        clientesjTextArea1.setText(gestionProducto.listar());
+        productosjTextArea1.setText(gestionProducto.listar());
     }//GEN-LAST:event_consultarBtnActionPerformed
 
     private void actualizarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarBtnActionPerformed
 
-        String cedulaIngresada = ccUpdateTextField5.getText();
+        String codigoIngresado = codUpdateTextField5.getText();
 
 
-        if (isNotNumeric(cedulaIngresada)){
+        if (isNotNumeric(codigoIngresado)){
 
-        JOptionPane.showMessageDialog(null, "Por favor ingrese una cedula válida");
+        JOptionPane.showMessageDialog(null, "Por favor ingrese un cóodigo válido");
 
         }else{
 
-        Integer intCedulaIngresada =Integer.valueOf(cedulaIngresada);
+        Integer intCodigoIngresado =Integer.valueOf(codigoIngresado);
 
-            if(GestionCliente.getListaClientes().containsKey(intCedulaIngresada)){
-
-
-            String apellidosNuevos = apellidosUpdatejTextField6.getText();
-            String nombresNuevos = nombresUpdatejTextField7.getText();
-            String tarjetaNueva = jtarjetaUpdateTextField8.getText();
+            if(GestionProducto.getListaProductos().containsKey(intCodigoIngresado)){
 
 
-                if (isNotNumeric(tarjetaNueva)){
+            String nombreNuevo = nombreUpdatejTextField6.getText();
+            String precioUcompra = precioCUpdatejTextField7.getText();
+            String precioUventa = precioVjUpdateTextField8.getText();
 
-                    JOptionPane.showMessageDialog(null, "Ingrese una tarjeta válida");
+
+                if (isNotNumeric(precioUcompra)|| isNotNumeric(precioUventa)){
+
+                    JOptionPane.showMessageDialog(null, "Ingrese precios válidos");
 
                 }else{
 
-                Integer intTarjetaNueva = Integer.valueOf(tarjetaNueva);
-                gestionProducto.actualizar(intCedulaIngresada, apellidosNuevos, nombresNuevos, intTarjetaNueva );
+                Integer intPrecioUcompra = Integer.valueOf(precioUcompra);
+                Integer intPrecioUventa = Integer.valueOf(precioUventa);
+                gestionProducto.actualizar(intCodigoIngresado, nombreNuevo, intPrecioUcompra, intPrecioUventa );
 
                 }
 
             }else{
 
-                JOptionPane.showMessageDialog(null, "La cedula "+ cedulaIngresada + " no existe");
+                JOptionPane.showMessageDialog(null, "El codigo "+ codigoIngresado + " no existe");
             }
         }
 
-       // gestionCliente.generarCSV();
+      
         
     }//GEN-LAST:event_actualizarBtnActionPerformed
 
     private void cargarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarBtnActionPerformed
-        String cedulaIngresada = ccUpdateTextField5.getText();
+        String codigoIngresado = codUpdateTextField5.getText();
         
         
-                if (isNotNumeric(cedulaIngresada)){
+                if (isNotNumeric(codigoIngresado)){
                 
-                JOptionPane.showMessageDialog(null, "Por favor ingrese una cedula válida");
+                JOptionPane.showMessageDialog(null, "Por favor ingrese un código válido");
                 
                 }else{
                 
-                Integer intCedulaIngresada =Integer.parseInt(cedulaIngresada);
+                Integer intCodigoIngresado =Integer.parseInt(codigoIngresado);
                 
-                    if(GestionCliente.getListaClientes().containsKey(intCedulaIngresada)){
-//                        
-//                        apellidosUpdatejTextField6.setText(gestionCliente.obtenerApellidos(intCedulaIngresada));
-//                        System.out.println(gestionCliente.obtenerApellidos(intCedulaIngresada));
-//                        nombresUpdatejTextField7.setText(gestionCliente.obtenerNombres(intCedulaIngresada));
-//                        jtarjetaUpdateTextField8.setText(gestionCliente.obtenerTarjetaDeCredito(intCedulaIngresada));
-//                        
+                    if(GestionProducto.getListaProductos().containsKey(intCodigoIngresado)){
+                        
+                        nombreUpdatejTextField6.setText(gestionProducto.obtenerNombre(intCodigoIngresado));
+                        //System.out.println(gestionCliente.obtenerApellidos(intCedulaIngresada));
+                        precioCUpdatejTextField7.setText(gestionProducto.obtenerPrecioUnitarioDeCompra(intCodigoIngresado));
+                        precioVjUpdateTextField8.setText(gestionProducto.obtenerPrecioUnitarioDeVenta(intCodigoIngresado));
+                        
                     }else{
 
-                        JOptionPane.showMessageDialog(null, "La cedula "+ cedulaIngresada + " no existe");
+                        JOptionPane.showMessageDialog(null, "El código "+ codigoIngresado + " no existe");
                     }
                 }
         
@@ -461,26 +464,25 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
 
     private void eliminarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBtnActionPerformed
         
-        String cedulaAeliminar = ccEliminarjTextField9.getText();
+        String codigoAeliminar = codEliminarjTextField9.getText();
         
-        if (isNotNumeric(cedulaAeliminar)){
+        if (isNotNumeric(codigoAeliminar)){
 
-            JOptionPane.showMessageDialog(null, "Por favor ingrese una cedula válida");
+            JOptionPane.showMessageDialog(null, "Por favor ingrese un código válido");
 
             }else{
 
-            Integer intCedulaAleiminar =Integer.parseInt(cedulaAeliminar);
+            Integer intCodigoAleiminar =Integer.parseInt(codigoAeliminar);
 
-                if(GestionCliente.getListaClientes().containsKey(intCedulaAleiminar)){
+                if(GestionProducto.getListaProductos().containsKey(intCodigoAleiminar)){
 
-                   gestionProducto.eliminar(intCedulaAleiminar);
+                   gestionProducto.eliminar(intCodigoAleiminar);
                 }else{
 
-                    JOptionPane.showMessageDialog(null, "La cedula "+ cedulaAeliminar + " no existe");
+                    JOptionPane.showMessageDialog(null, "El código " + codigoAeliminar + " no existe");
                 }
             }
         
-       // gestionCliente.generarCSV();
         
     }//GEN-LAST:event_eliminarBtnActionPerformed
 
@@ -533,36 +535,15 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
         return false;
     }
         
-        public void generarCSValCerrar(){
-        
-            try {
-                
-                addWindowListener(new WindowAdapter() {
-                    @Override
-                    public void windowClosing(WindowEvent e) {
-                        gestionProducto.generarCSV();
-                        System.out.println("Estoy cerrando");
-                        }
-                    });
-                        
-            }catch (Exception e){
-                e.printStackTrace();
 
-            }
-
-        }
-        
     private GestionProducto gestionProducto;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actualizarBtn;
-    private javax.swing.JTextField apellidosUpdatejTextField6;
-    private javax.swing.JTextField apellidosjTextField3;
     private javax.swing.JButton cargarBtn;
-    private javax.swing.JTextField ccEliminarjTextField9;
-    private javax.swing.JTextField ccUpdateTextField5;
-    private javax.swing.JTextField ccjTextField2;
     private javax.swing.JScrollPane clientesjScrollPane2;
-    private javax.swing.JTextArea clientesjTextArea1;
+    private javax.swing.JTextField codEliminarjTextField9;
+    private javax.swing.JTextField codUpdateTextField5;
+    private javax.swing.JTextField codigojTextField2;
     private javax.swing.JButton consultarBtn;
     private javax.swing.JButton eliminarBtn;
     private javax.swing.JLabel jLabel1;
@@ -578,10 +559,13 @@ public class VentanaGestionProducto extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jtarjetaTextField4;
-    private javax.swing.JTextField jtarjetaUpdateTextField8;
-    private javax.swing.JTextField nombresUpdatejTextField7;
-    private javax.swing.JTextField nombresjTextField1;
+    private javax.swing.JTextField nombreUpdatejTextField6;
+    private javax.swing.JTextField nombrejTextField1;
+    private javax.swing.JTextField precioCUpdatejTextField7;
+    private javax.swing.JTextField precioCjTextField3;
+    private javax.swing.JTextField precioVjTextField4;
+    private javax.swing.JTextField precioVjUpdateTextField8;
+    private javax.swing.JTextArea productosjTextArea1;
     private javax.swing.JButton registrarBtn;
     // End of variables declaration//GEN-END:variables
 }
