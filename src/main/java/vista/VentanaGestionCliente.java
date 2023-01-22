@@ -378,7 +378,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
     private void actualizarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarBtnActionPerformed
         
         
-//<<<<<<< HEAD
+
                 String cedulaIngresada = ccUpdateTextField5.getText();
 
 
@@ -414,29 +414,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "La cedula "+ cedulaIngresada + " no existe");
                     }
                 }
-//=======
-//                String cedulaIngresada = ccUpdateTextField5.getText();
-//
-//
-//                if (isNotNumeric(cedulaIngresada)){
-//                
-//                JOptionPane.showMessageDialog(null, "Por favor ingrese una cedula válida");
-//                
-//                }else{
-//                
-//                Integer intCedulaIngresada =Integer.parseInt(cedulaIngresada);
-//                
-//                    if(GestionCliente.getListaClientes().containsKey(intCedulaIngresada)){
-//                        //actualizar(Integer cedula, String nombres, String apellidos, Integer tarjetaDeCredito)
-//                        JOptionPane.showMessageDialog(null, "La cedula "+ cedulaIngresada + " ya existe");
-//                        
-//                    }else{
-//
-//                        gestionCliente.agregar(intCedulaIngresada, nombresNuevos, apellidosNuevos, intTarjetaNueva);
-//                        JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
-//                    }
-//                }
-//>>>>>>> 0c9eff83badad10a8fa7c054e227ae08394197c0
+
         
         
     }//GEN-LAST:event_actualizarBtnActionPerformed
