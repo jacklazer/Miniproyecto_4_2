@@ -18,14 +18,14 @@ public class Producto {
     private String Nombre;
     private Integer PrecioUnitarioDeCompra;
     private Integer PrecioUnitarioDeVenta;
-    private Integer cantidadDeUnidades;
+    private Integer cantidadDeUnidadesDisponibles;
 
     public Producto(Integer Codigo, String Nombre, Integer PrecioUnitarioDeCompra, Integer PrecioUnitarioDeVenta) {
         this.Codigo = Codigo;
         this.Nombre = Nombre;
         this.PrecioUnitarioDeCompra = PrecioUnitarioDeCompra;
         this.PrecioUnitarioDeVenta = PrecioUnitarioDeVenta;
-        cantidadDeUnidades = 0;
+        cantidadDeUnidadesDisponibles = 0;
     }
 
     public Integer getCodigo() {
@@ -56,13 +56,18 @@ public class Producto {
         this.PrecioUnitarioDeVenta = PrecioUnitarioDeVenta;
     }
     
+    public Integer getCantidadDeUnidadesDisponibles() {
+        return cantidadDeUnidadesDisponibles;
+    }
+    
+    public void setCantidadDeUnidadesDisponibles(Integer cantidad) {
+        cantidadDeUnidadesDisponibles = cantidad;
+    }
     
     @Override
     public String toString() {
-        return "Producto{" + "Codigo: " + this.getCodigo() + ", Nombre: " + this.getNombre() +
-               ", Precio unitario de compra: " + this.getPrecioUnitarioDeCompra() + 
-               ", Precio unitario de venta: " + this.getPrecioUnitarioDeVenta() + "}";
-    }
+        return "Producto{" + "Codigo: " + this.getCodigo() + ", Nombre: " + this.getNombre() + ", Precio unitario de compra: " + this.getPrecioUnitarioDeCompra() + ", Precio unitario de venta: " + this.getPrecioUnitarioDeVenta() + ", Cantidad de unidades disponibles: " + this.getCantidadDeUnidadesDisponibles() + "}";
+    } 
     
     
 }

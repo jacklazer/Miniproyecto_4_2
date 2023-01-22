@@ -103,27 +103,32 @@ public class GestionProducto {
         String nombre;
         Integer precioUnitarioDeCompra;
         Integer precioUnitarioDeVenta;
+        Integer cantidadDeUnidadesDisponibles;
         
         try {
             FileReader fileReader = new FileReader(archivo);
             try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
 
                 while ((cadena1 = bufferedReader.readLine()) != null){
-                    cadena2 = cadena1.replace("Producto{Codigo: ", "");
-                    cadena1 = cadena2.replace(" Nombre: ", "");
-                    cadena2 = cadena1.replace(" Precio unitario de compra: ", "");
-                    cadena1 = cadena2.replace(" Precio unitario de venta: ", "");
+                    cadena2 = cadena1.replace("Producto{", "");
+                    cadena1 = cadena2.replace("Codigo: ", "");
+                    cadena2 = cadena1.replace(" Nombre: ", "");
+                    cadena1 = cadena2.replace(" Precio unitario de compra: ", "");
+                    cadena2 = cadena1.replace(" Precio unitario de venta: ", "");
+                    cadena1 = cadena2.replace(" Cantidad de unidades disponibles: ", "");
                     cadena2 = cadena1.replace("}", "");
 //                   
                     stringTokenizer = new StringTokenizer(cadena2,",");
 //                    
-                    if (stringTokenizer.countTokens() == 4) {
+                    if (stringTokenizer.countTokens() == 5) {
                         codigo = Integer.valueOf(stringTokenizer.nextToken());
                         nombre = stringTokenizer.nextToken();
                         precioUnitarioDeCompra = Integer.valueOf(stringTokenizer.nextToken());
                         precioUnitarioDeVenta = Integer.valueOf(stringTokenizer.nextToken());
+                        cantidadDeUnidadesDisponibles = Integer.valueOf(stringTokenizer.nextToken());
                         
                         Producto producto = new Producto(codigo, nombre, precioUnitarioDeCompra, precioUnitarioDeVenta);
+                        producto.setCantidadDeUnidadesDisponibles(cantidadDeUnidadesDisponibles);
                         listaProductos.put(codigo, producto);
                     } 
                 }
