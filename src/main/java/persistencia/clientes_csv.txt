@@ -1,4 +1,1 @@
-Cliente{Cedula: 1, Nombres: 1, Apellidos: uwu, Tarjeta de credito: 1}
-Cliente{Cedula: 2, Nombres: 1, Apellidos: 1, Tarjeta de credito: 1}
-Cliente{Cedula: 3, Nombres: 1, Apellidos: 1, Tarjeta de credito: 1}
-Cliente{Cedula: 19876, Nombres: ya se pudo, Apellidos: wiii, Tarjeta de credito: 666}
+Cliente{Cedula: 1006169971, Apellidos: Cifuentes Vallejo, Nombres: Juan Sebastian, Tarjeta de credito: 88888888}

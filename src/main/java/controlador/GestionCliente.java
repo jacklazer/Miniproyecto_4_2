@@ -24,6 +24,7 @@ import modelo.Cliente;
  *
  * @author alejaXD
  */
+
 //public class GestionCliente implements IGestionDatos{
 public class GestionCliente{
     private static Map <Integer, Cliente> listaClientes;
@@ -37,22 +38,22 @@ public class GestionCliente{
     }
     
 
-    public void agregar(Integer cedula, String nombres, String apellidos, Integer tarjetaDeCredito) {
-        Cliente cliente = new Cliente(cedula, nombres, apellidos, tarjetaDeCredito);
+    public void agregar(Integer cedula, String apellidos, String nombres, Integer tarjetaDeCredito) {
+        Cliente cliente = new Cliente(cedula, apellidos, nombres, tarjetaDeCredito);
         listaClientes.put(cedula, cliente);
     }
 
 
-    public void actualizar(Integer cedula, String nombres, String apellidos, Integer tarjetaDeCredito) {
+    public void actualizar(Integer cedula, String apellidos, String nombres, Integer tarjetaDeCredito) {
         if(listaClientes.containsKey(cedula)){
-            if (nombres != null)
-                (listaClientes.get(cedula)).setNombres(nombres);
-            if (nombres != null)
+            if (apellidos != null)
                 (listaClientes.get(cedula)).setApellidos(apellidos);
             if (nombres != null)
+                (listaClientes.get(cedula)).setNombres(nombres);
+            if (tarjetaDeCredito != null)
                 (listaClientes.get(cedula)).setTarjetaDeCredito(tarjetaDeCredito);
         } else {
-            JOptionPane.showMessageDialog(null, "El usuario no se encuentra registrado en la lista de afiliados");
+            JOptionPane.showMessageDialog(null, "El cliente no se encuentra registrado en la lista de clientes");
         }
     }
 
@@ -61,15 +62,15 @@ public class GestionCliente{
         
         if(listaClientes.containsKey(cedula)){
             listaClientes.remove(cedula);
-            JOptionPane.showMessageDialog(null, "Afiliado eliminado con exito del registro de afiliados");
+            JOptionPane.showMessageDialog(null, "Cliente eliminado con exito del registro de clientes");
         } else {
-            JOptionPane.showMessageDialog(null, "El usuario no se encuentra registrado en la lista de afiliados o el id ingresado es incorrecto");
+            JOptionPane.showMessageDialog(null, "El cliente no se encuentra registrado en la lista de clientes o la cedula ingresada es incorrecta");
         }
     }
 
 
     public String listar() {
-        String lista = "---------- Afiliados ----------\n";
+        String lista = "---------- Clientes ----------\n";
         for(int cedula : listaClientes.keySet()){
             lista += listaClientes.get(cedula) + "\n";
         }
@@ -111,29 +112,36 @@ public class GestionCliente{
         try {
             FileReader fileReader = new FileReader(archivo);
             try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
-////                cadena1 = bufferedReader.readLine();
-//                for(int i=1; i <= 4; i++){
-//                    cadena1 = bufferedReader.readLine();
-//                    cadena2 = cadena1.replace("Cliente{Cedula: ", "");
-//                    cadena1 = cadena2.replace(" Nombres: ", "");
-//                    cadena2 = cadena1.replace(" Apellidos: ", "");
-//                    cadena1 = cadena2.replace(" Tarjeta de credito: ", "");
-//                    cadena2 = cadena1.replace("}", "");
-//                    
-//                    stringTokenizer = new StringTokenizer(cadena2,",");
-//                    
-//                    cedula = Integer.valueOf(stringTokenizer.nextToken());
-//                    apellidos = stringTokenizer.nextToken();
-//                    nombres = stringTokenizer.nextToken();
-//                    tarjetaDeCredito = Integer.valueOf(stringTokenizer.nextToken());
-//
-//                    Cliente cliente = new Cliente(cedula, nombres, apellidos, tarjetaDeCredito);
-//                    listaClientes.put(cedula, cliente);
-//                    
-//                    if (cadena1 != null) {
-//                        break;
-//                    }
-//                }
+////////////                cadena1 = bufferedReader.readLine();
+////////////                for(int i=1; i <= 4; i++){
+////////////                    cadena1 = bufferedReader.readLine();
+////////////                    
+////////////                    if (cadena1 == null) {
+////////////                        break;
+////////////                    }
+////////////                    
+////////////                    cadena2 = cadena1.replace("Cliente{Cedula: ", "");
+////////////                    cadena1 = cadena2.replace(" Apellidos: ", "");
+////////////                    cadena2 = cadena1.replace(" Nombres: ", "");
+////////////                    cadena1 = cadena2.replace(" Tarjeta de credito: ", "");
+////////////                    cadena2 = cadena1.replace("}", "");
+////////////                    
+////////////                    if (cadena2 == null) {
+////////////                        break;
+////////////                    }
+////////////                    
+////////////                    stringTokenizer = new StringTokenizer(cadena2,",");
+////////////                    
+////////////                    cedula = Integer.valueOf(stringTokenizer.nextToken());
+////////////                    apellidos = stringTokenizer.nextToken();
+////////////                    nombres = stringTokenizer.nextToken();
+////////////                    tarjetaDeCredito = Integer.valueOf(stringTokenizer.nextToken());
+////////////
+////////////                    Cliente cliente = new Cliente(cedula, apellidos, nombres, tarjetaDeCredito);
+////////////                    listaClientes.put(cedula, cliente);
+////////////                    
+////////////                }
+
                 while ((cadena1 = bufferedReader.readLine()) != null){
                     cadena2 = cadena1.replace("Cliente{Cedula: ", "");
                     cadena1 = cadena2.replace(" Nombres: ", "");

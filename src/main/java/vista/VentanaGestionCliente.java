@@ -344,12 +344,10 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarBtnActionPerformed
-       
-        
         
         String cedulaPreguntada = ccjTextField2.getText();
-        String nombres = nombresjTextField1.getText();
         String apellidos = apellidosjTextField3.getText();
+        String nombres = nombresjTextField1.getText();
         String tarjetaPreguntada = jtarjetaTextField4.getText();
 
         if (isNotNumeric(cedulaPreguntada) || isNotNumeric(tarjetaPreguntada)){
@@ -366,7 +364,7 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
                 
             }else{
 
-                gestionCliente.agregar(intCedula, nombres, apellidos, intTarjeta);
+                gestionCliente.agregar(intCedula, apellidos, nombres, intTarjeta);
                 JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
             }
         }
@@ -445,8 +443,6 @@ public class VentanaGestionCliente extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "La cedula "+ cedulaIngresada + " no existe");
                     }
                 }
-        
-        
     }//GEN-LAST:event_cargarBtnActionPerformed
 
     private void eliminarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBtnActionPerformed
