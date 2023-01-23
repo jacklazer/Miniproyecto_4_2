@@ -169,11 +169,7 @@ public class GestionProducto {
     public Integer obtenerPrecioUnitarioDeVentaInteger(Integer codigo) {
         return listaProductos.get(codigo).getPrecioUnitarioDeVenta();
     }    
-    
-    public Integer obtenerPrecioUnitarioDeVentaInteger(Integer codigo) {
-        return listaProductos.get(codigo).getPrecioUnitarioDeVenta();
-    }
-    
+   
     public void comprarUnidades(Integer codigo, Integer cantidad) {
         listaProductos.get(codigo).setCantidadDeUnidadesDisponibles(listaProductos.get(codigo).getCantidadDeUnidadesDisponibles()+cantidad);
     }
