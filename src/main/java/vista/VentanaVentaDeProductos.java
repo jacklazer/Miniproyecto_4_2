@@ -310,16 +310,19 @@ public class VentanaVentaDeProductos extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Integer codigo = Integer.valueOf(jTextField1.getText());
         Integer unidadesAQuitar = Integer.valueOf(jTextField2.getText());
-        
-        Integer precio = gestionProducto.obtenerPrecioUnitarioDeVentaInteger(codigo)*unidadesAQuitar;
+        Integer precioAQuitar = gestionProducto.obtenerPrecioUnitarioDeVentaInteger(codigo)*unidadesAQuitar;
         
         if (vectorDeCodigos.contains(codigo)){
+            Integer posicionDelProductoAQuitarDelCarrito = vectorDeCodigos.indexOf(codigo);
+            Integer unidadesRestantes = vectorDeUnidadesAComprar.get(posicionDelProductoAQuitarDelCarrito)-unidadesAQuitar;
+            Integer precioRestante = vectorDePrecios.get(posicionDelProductoAQuitarDelCarrito)-precioAQuitar;
             
-        }
-        
-        vectorDeCodigos.add(codigo);
-        vectorDeUnidadesAComprar.add(unidadesAQuitar);
-        vectorDePrecios.add(precio);
+            vectorDeUnidadesAComprar.removeElementAt(posicionDelProductoAQuitarDelCarrito);
+            vectorDePrecios.removeElementAt(posicionDelProductoAQuitarDelCarrito);
+            
+            vectorDeUnidadesAComprar.insertElementAt(unidadesRestantes, posicionDelProductoAQuitarDelCarrito);
+            vectorDePrecios.insertElementAt(precioRestante, posicionDelProductoAQuitarDelCarrito);
+        } 
         
         String textoDelCarritoDeCompras = "------------ Carrito de compras ------------\n";
         
