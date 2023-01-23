@@ -1,1 +1,4 @@
-Producto{Codigo: 1, Nombre: jabon, Precio unitario de compra: 3000, Precio unitario de venta: 5000, Cantidad de unidades disponibles: 10}
+Producto{Codigo: 1, Nombre: jabon, Precio unitario de compra: 1000, Precio unitario de venta: 5000, Cantidad de unidades disponibles: 10}
+Producto{Codigo: 2, Nombre: shampoo, Precio unitario de compra: 1000, Precio unitario de venta: 6000, Cantidad de unidades disponibles: 10}
+Producto{Codigo: 3, Nombre: crema dental, Precio unitario de compra: 1000, Precio unitario de venta: 7000, Cantidad de unidades disponibles: 10}
+Producto{Codigo: 4, Nombre: cloro, Precio unitario de compra: 1000, Precio unitario de venta: 8000, Cantidad de unidades disponibles: 10}
