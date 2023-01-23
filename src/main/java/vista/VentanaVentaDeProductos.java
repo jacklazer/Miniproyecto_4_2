@@ -8,6 +8,8 @@ import controlador.GestionProducto;
 import static controlador.GestionProducto.getListaProductos;
 import controlador.GestionProvedor;
 import java.util.Vector;
+import javax.swing.JOptionPane;
+import static vista.VentanaGestionProducto.isNotNumeric;
 
 /**
  * @authors:
@@ -253,25 +255,13 @@ public class VentanaVentaDeProductos extends javax.swing.JFrame {
     for (Integer codigo : vectorDeCodigos){
         for (Integer unidad : vectorDeUnidadesAComprar){
             if (vectorDeCodigos.indexOf(codigo)== vectorDeUnidadesAComprar.indexOf(unidad)){
-            Integer cantidadDisponible= gestionProducto.obtenerCantidad(codigo);
-            Integer restar = cantidadDisponible-unidad;
-            getListaProductos().get(codigo).setCantidadDeUnidadesDisponibles(restar);
+                gestionProducto.venderUnidades(codigo,unidad);
+
             }
         }
-        //if (vectorDeCodigos.indexOf(codigo)== vectorDeUnidadesAComprar.indexOf(unidad){}
-                //indexOf(vectorDeUnidadesAComprar.get(i)))
-        
-        
-       // if codigo coincide con la posición de unidades, contar las unidades
-           // y restarlas de la parte de unidades de la lista de productos
-                
-    }
-            
-    
-    //Vector<Integer> vectorDeCodigos;
-    //Vector<Integer> vectorDeUnidadesAComprar;
-    //Vector<Integer> vectorDePrecios;
-        
+      
+    }jTextArea1.setText(null);
+      
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -284,27 +274,68 @@ public class VentanaVentaDeProductos extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Integer codigo = Integer.valueOf(jTextField1.getText());
-        Integer unidadesAComprar = Integer.valueOf(jTextField2.getText());
         
-        Integer precio = gestionProducto.obtenerPrecioUnitarioDeVentaInteger(codigo)*unidadesAComprar;
+                String sCodigo= jTextField1.getText();
+                String sUnidadesAComprar= jTextField2.getText();
         
-        vectorDeCodigos.add(codigo);
-        vectorDeUnidadesAComprar.add(unidadesAComprar);
-        vectorDePrecios.add(precio);
+                if (isNotNumeric(sCodigo)||isNotNumeric(sUnidadesAComprar)){
+                
+                JOptionPane.showMessageDialog(null, "Por favor ingrese un código y/o una cantidad válida");
+                
+                }else{
+                Integer codigo = Integer.valueOf(jTextField1.getText());
+                Integer unidadesAComprar = Integer.valueOf(jTextField2.getText());
+                
+              
+                    if(GestionProducto.getListaProductos().containsKey(codigo)){
+                        Integer uDisponibles = gestionProducto.obtenerCantidad(codigo);
+                       
+                        if(unidadesAComprar > uDisponibles|| gestionProducto.obtenerCantidad(codigo)<=0){
+                            
+                            JOptionPane.showMessageDialog(null, "No puedes comprar mas productos de los disponibles");
+                            
+                        }else{
+                        
+                            Integer precio = gestionProducto.obtenerPrecioUnitarioDeVentaInteger(codigo)*unidadesAComprar;
+
+                            vectorDeCodigos.add(codigo);
+                            vectorDeUnidadesAComprar.add(unidadesAComprar);
+                            vectorDePrecios.add(precio);
+
+                            String textoDelCarritoDeCompras = "------------ Carrito de compras ------------\n";
+
+                            int c = 0;
+                            for (int i : vectorDeCodigos){
+                                textoDelCarritoDeCompras += "{Codigo: " + i + ", Producto: " + vectorDeUnidadesAComprar.get(c) + ", Precio unitario: " + gestionProducto.obtenerPrecioUnitarioDeVentaInteger(i)  + ", Precio total: " + vectorDePrecios.get(c) + "}\n";
+                                c++;
+                            }
+                          
+                        jTextArea1.setText(textoDelCarritoDeCompras);
+                        }
+
+
+                        
+                    }else{
+
+                        JOptionPane.showMessageDialog(null, "El código "+ sCodigo + " no existe");
+                    }
+                }jTextField1.setText(null);
+                jTextField2.setText(null);
         
-        String textoDelCarritoDeCompras = "------------ Carrito de compras ------------\n";
         
-        Integer precioTotal = 0;
-        int c = 0;
-        for (int i : vectorDeCodigos){
-            textoDelCarritoDeCompras += "{Codigo: " + i + ", Producto: " + gestionProducto.obtenerNombre(i) + ", Unidades a comprar: " + vectorDeUnidadesAComprar.get(c) + ", Precio unitario: " + gestionProducto.obtenerPrecioUnitarioDeVentaInteger(i)  + ", Precio total: " + vectorDePrecios.get(c) + "}\n";
-            precioTotal += vectorDePrecios.get(c);
-            c++;
-        }
-        
-        jTextArea1.setText(textoDelCarritoDeCompras);
-        jTextField3.setText(String.valueOf(precioTotal));
+////<<<<<<< HEAD
+//////=======
+//        Integer precioTotal = 0;
+//        int c = 0;
+//        for (int i : vectorDeCodigos){
+//            textoDelCarritoDeCompras += "{Codigo: " + i + ", Producto: " + gestionProducto.obtenerNombre(i) + ", Unidades a comprar: " + vectorDeUnidadesAComprar.get(c) + ", Precio unitario: " + gestionProducto.obtenerPrecioUnitarioDeVentaInteger(i)  + ", Precio total: " + vectorDePrecios.get(c) + "}\n";
+//            precioTotal += vectorDePrecios.get(c);
+//            c++;
+//        }
+//        
+//        jTextArea1.setText(textoDelCarritoDeCompras);
+//        jTextField3.setText(String.valueOf(precioTotal));
+////>>>>>>> 9a6074729480eea5f78a490767ef3131c593b3f0
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
