@@ -175,7 +175,7 @@ public class GestionProducto {
     }
     
     public void venderUnidades(Integer codigo, Integer cantidad) {
-        listaProductos.get(codigo).setCantidadDeUnidadesDisponibles(listaProductos.get(codigo).getCantidadDeUnidadesDisponibles()+cantidad);
+        listaProductos.get(codigo).setCantidadDeUnidadesDisponibles(listaProductos.get(codigo).getCantidadDeUnidadesDisponibles()-cantidad);
     }
     
 //    public boolean productoEnLista(Integer codigo) {
