@@ -150,6 +150,10 @@ public class GestionProducto {
         return listaProductos.get(codigo).getNombre();
     }
     
+    public Integer obtenerCantidad(Integer codigo) {
+        return listaProductos.get(codigo).getCantidadDeUnidadesDisponibles();
+    }
+    
     public String obtenerPrecioUnitarioDeCompra(Integer codigo) {
         return String.valueOf(listaProductos.get(codigo).getPrecioUnitarioDeCompra());
     }
@@ -160,6 +164,10 @@ public class GestionProducto {
     
     public String obtenerPrecioUnitarioDeVenta(Integer codigo) {
         return String.valueOf(listaProductos.get(codigo).getPrecioUnitarioDeVenta());
+    }
+    
+    public Integer obtenerPrecioUnitarioDeVentaInteger(Integer codigo) {
+        return listaProductos.get(codigo).getPrecioUnitarioDeVenta();
     }
     
     public void comprarUnidades(Integer codigo, Integer cantidad) {
