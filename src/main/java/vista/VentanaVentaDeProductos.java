@@ -5,6 +5,7 @@
 package vista;
 
 import controlador.GestionProducto;
+import static controlador.GestionProducto.getListaProductos;
 import controlador.GestionProvedor;
 import java.util.Vector;
 
@@ -248,7 +249,30 @@ public class VentanaVentaDeProductos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+    
+    for (Integer codigo : vectorDeCodigos){
+        for (Integer unidad : vectorDeUnidadesAComprar){
+            if (vectorDeCodigos.indexOf(codigo)== vectorDeUnidadesAComprar.indexOf(unidad)){
+            Integer cantidadDisponible= gestionProducto.obtenerCantidad(codigo);
+            Integer restar = cantidadDisponible-unidad;
+            getListaProductos().get(codigo).setCantidadDeUnidadesDisponibles(restar);
+            }
+        }
+        //if (vectorDeCodigos.indexOf(codigo)== vectorDeUnidadesAComprar.indexOf(unidad){}
+                //indexOf(vectorDeUnidadesAComprar.get(i)))
+        
+        
+       // if codigo coincide con la posición de unidades, contar las unidades
+           // y restarlas de la parte de unidades de la lista de productos
+                
+    }
+            
+    
+    //Vector<Integer> vectorDeCodigos;
+    //Vector<Integer> vectorDeUnidadesAComprar;
+    //Vector<Integer> vectorDePrecios;
+        
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
