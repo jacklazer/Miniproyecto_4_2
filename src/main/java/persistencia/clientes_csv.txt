@@ -1,0 +1,1 @@
+Cliente{Cedula: 1006169971, Apellidos: Cifuentes Vallejo, Nombres: Juan Sebastian, Tarjeta de credito: 88888888}
