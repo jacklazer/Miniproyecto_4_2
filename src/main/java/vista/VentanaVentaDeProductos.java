@@ -88,6 +88,11 @@ public class VentanaVentaDeProductos extends javax.swing.JFrame {
         });
 
         jButton1.setText("ELIMINAR DEL CARRITO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -266,14 +271,45 @@ public class VentanaVentaDeProductos extends javax.swing.JFrame {
         
         String textoDelCarritoDeCompras = "------------ Carrito de compras ------------\n";
         
+        Integer precioTotal = 0;
         int c = 0;
         for (int i : vectorDeCodigos){
-            textoDelCarritoDeCompras += "{Codigo: " + i + ", Producto: " + vectorDeUnidadesAComprar.get(c) + ", Precio unitario: " + gestionProducto.obtenerPrecioUnitarioDeVentaInteger(i)  + ", Precio total: " + vectorDePrecios.get(c) + "}\n";
+            textoDelCarritoDeCompras += "{Codigo: " + i + ", Producto: " + gestionProducto.obtenerNombre(i) + ", Unidades a comprar: " + vectorDeUnidadesAComprar.get(c) + ", Precio unitario: " + gestionProducto.obtenerPrecioUnitarioDeVentaInteger(i)  + ", Precio total: " + vectorDePrecios.get(c) + "}\n";
+            precioTotal += vectorDePrecios.get(c);
             c++;
         }
         
         jTextArea1.setText(textoDelCarritoDeCompras);
+        jTextField3.setText(String.valueOf(precioTotal));
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Integer codigo = Integer.valueOf(jTextField1.getText());
+        Integer unidadesAQuitar = Integer.valueOf(jTextField2.getText());
+        
+        Integer precio = gestionProducto.obtenerPrecioUnitarioDeVentaInteger(codigo)*unidadesAQuitar;
+        
+        if (vectorDeCodigos.contains(codigo)){
+            
+        }
+        
+        vectorDeCodigos.add(codigo);
+        vectorDeUnidadesAComprar.add(unidadesAQuitar);
+        vectorDePrecios.add(precio);
+        
+        String textoDelCarritoDeCompras = "------------ Carrito de compras ------------\n";
+        
+        Integer precioTotal = 0;
+        int c = 0;
+        for (int i : vectorDeCodigos){
+            textoDelCarritoDeCompras += "{Codigo: " + i + ", Producto: " + gestionProducto.obtenerNombre(i) + ", Unidades a comprar: " + vectorDeUnidadesAComprar.get(c) + ", Precio unitario: " + gestionProducto.obtenerPrecioUnitarioDeVentaInteger(i)  + ", Precio total: " + vectorDePrecios.get(c) + "}\n";
+            precioTotal += vectorDePrecios.get(c);
+            c++;
+        }
+        
+        jTextArea1.setText(textoDelCarritoDeCompras);
+        jTextField3.setText(String.valueOf(precioTotal));
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
