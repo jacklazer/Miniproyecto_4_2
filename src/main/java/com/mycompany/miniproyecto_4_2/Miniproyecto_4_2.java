@@ -23,3 +23,5 @@ public class Miniproyecto_4_2 {
         ventanaGestion.setVisible (true);
     }
 }
+
+// Cambio
